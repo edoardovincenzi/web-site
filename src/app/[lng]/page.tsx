@@ -20,7 +20,7 @@ export default function Page({ params: { lng } }: any) {
             expandDescription ? 'h-full' : 'h-4/6'
           }  md:h-full `}
         >
-          <div className="flex flex-col justify-center items-center h-full px-6 pt-4 pb-6 bg-[#FD536B] rounded-3xl gap-y-2 lg:gap-y-6 relative">
+          <div className="flex text-textCardDescription flex-col justify-center items-center h-full px-6 pt-4 pb-6 bg-bgCardDescription rounded-3xl gap-y-2 lg:gap-y-6 relative">
             <h3 className="title-card-home">Description</h3>
             <p className="text-sm xl:text-base overflow-y-scroll">
               <Trans
@@ -39,12 +39,12 @@ export default function Page({ params: { lng } }: any) {
         <div
           className={`${
             expandDescription ? 'h-0 overflow-hidden' : 'h-2/6'
-          } flex flex-col w-full md:h-full md:w-1/2 gap-3`}
+          } h-2/6 flex flex-col w-full md:h-full md:w-1/2 gap-3`}
         >
           <Link
             href={`/${lng}/resume`}
             replace
-            className="card-small-home bg-[#7FD1AE]"
+            className="card-small-home bg-bgCard1"
           >
             <MdWeb className="icon-card-home" />
             <h3 className="title-card-home">Projects</h3>
@@ -52,7 +52,7 @@ export default function Page({ params: { lng } }: any) {
           <Link
             href={`/${lng}/resume`}
             replace
-            className="card-small-home bg-[#E5C0C0]"
+            className="card-small-home bg-bgCard2"
           >
             <RiContactsLine className="icon-card-home" />
             <h3 className="title-card-home">Resume</h3>
