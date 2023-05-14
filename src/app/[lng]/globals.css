@@ -10,6 +10,15 @@
     @apply text-4xl md:text-6xl;
   }
   .card-small-home {
-    @apply flex justify-center items-center h-1/2 rounded-full gap-6;
+    @apply flex justify-center items-center h-1/2 rounded-full gap-6 cursor-pointer;
+  }
+  .footer-icon {
+    @apply text-4xl cursor-pointer;
+  }
+  .app-container {
+    @apply flex flex-col h-[calc(100vh-60px)] items-center justify-start;
+  }
+  .app-header {
+    @apply flex items-center justify-center text-6xl md:text-8xl w-full h-[20%] md:h-[30%] text-center font-bold relative;
   }
 }

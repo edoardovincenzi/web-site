@@ -11,11 +11,9 @@ export default function Page({ params: { lng } }: any) {
   const { t }: any = useTranslation(lng);
   const [expandDescription, setExpandDescription] = useState(false);
   return (
-    <div className="flex flex-col h-[calc(100vh-60px)] items-center justify-start">
-      <h1 className="flex items-center justify-center text-6xl md:text-8xl h-[25%] md:h-[40%] text-center font-bold">
-        {t('title', 'Edoardo Vincenzi')}
-      </h1>
-      <div className="flex max-md:flex-col w-full h-[75%] md:h-[60%] gap-3">
+    <div className="app-container">
+      <h1 className="app-header">{t('title', 'Edoardo Vincenzi')}</h1>
+      <div className="flex max-md:flex-col w-full h-[80%] xl:h-[70%] gap-3">
         <div
           className={`transition-all w-full md:w-1/2 ${
             expandDescription ? 'h-full' : 'h-4/6'
@@ -49,14 +47,22 @@ export default function Page({ params: { lng } }: any) {
             expandDescription ? 'h-0 overflow-hidden' : 'h-2/6'
           } flex flex-col w-full md:h-full md:w-1/2 gap-3`}
         >
-          <div className="card-small-home bg-[#7FD1AE]">
+          <Link
+            href={`/${lng}/resume`}
+            replace
+            className="card-small-home bg-[#7FD1AE]"
+          >
             <MdWeb className="icon-card-home" />
             <h3 className="title-card-home">Projects</h3>
-          </div>
-          <div className="card-small-home bg-[#E5C0C0]">
+          </Link>
+          <Link
+            href={`/${lng}/resume`}
+            replace
+            className="card-small-home bg-[#E5C0C0]"
+          >
             <RiContactsLine className="icon-card-home" />
             <h3 className="title-card-home">Resume</h3>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
