@@ -8,7 +8,7 @@ export default async function Page({ params: { lng } }: any) {
 
   return (
     <div className="app-container container mx-auto overflow-y-auto">
-      <div className="app-header">
+      <div className="app-header py-4">
         <Link href={`/${lng}/`} replace className=" absolute left-0">
           <MdArrowBack className="icon-card-home" />
         </Link>

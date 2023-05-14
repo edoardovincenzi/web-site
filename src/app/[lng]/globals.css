@@ -16,7 +16,7 @@
     @apply text-4xl cursor-pointer;
   }
   .app-container {
-    @apply flex flex-col h-[calc(100vh-60px)] items-center justify-start;
+    @apply flex flex-col items-center justify-start;
   }
   .app-header {
     @apply flex items-center justify-center text-5xl md:text-6xl lg:text-7xl xl:text-8xl  w-full h-[20%] md:my-6 text-center font-bold relative;
