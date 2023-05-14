@@ -14,7 +14,7 @@ export default function Page({ params: { lng } }: any) {
   return (
     <div className="app-container">
       <h1 className="app-header">{t('title', 'Edoardo Vincenzi')}</h1>
-      <div className="flex max-md:flex-col w-full h-[80%] xl:h-[70%] gap-3">
+      <div className="flex max-md:flex-col w-full h-[80%] mb-4 gap-3">
         <div
           className={`transition-all w-full md:w-1/2 ${
             expandDescription ? 'h-full' : 'h-4/6'

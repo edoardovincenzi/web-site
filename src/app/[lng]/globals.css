@@ -19,12 +19,6 @@
     @apply flex flex-col h-[calc(100vh-60px)] items-center justify-start;
   }
   .app-header {
-    @apply flex items-center justify-center text-6xl md:text-8xl w-full h-[20%] md:h-[30%] text-center font-bold relative;
-  }
-}
-
-@keyframes shine {
-  to {
-    background-position-x: -200%;
+    @apply flex items-center justify-center text-6xl md:text-8xl w-full h-[20%] md:my-6 text-center font-bold relative;
   }
 }

@@ -2,7 +2,7 @@ import './globals.css';
 import { dir } from 'i18next';
 import { languages } from '../i18n/settings';
 import { ParamsLng } from '@/types';
-import Footer from './components/Footer';
+import MyLinks from './components/MyLinks';
 import { Poppins } from '@next/font/google';
 
 const poppins = Poppins({
@@ -29,9 +29,9 @@ export default function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)} className={poppins.className}>
       <head />
-      <body className=" bg-bgPrimary text-textPrimary">
+      <body className="bg-bgPrimary text-textPrimary">
+        <MyLinks />
         <main className=" mx-3 ">{children}</main>
-        <Footer />
       </body>
     </html>
   );
