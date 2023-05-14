@@ -6,6 +6,7 @@ import { MdWeb } from 'react-icons/md';
 import { RiContactsLine } from 'react-icons/ri';
 import { BiExpandVertical } from 'react-icons/bi';
 import { useState } from 'react';
+import { Trans } from 'react-i18next';
 
 export default function Page({ params: { lng } }: any) {
   const { t }: any = useTranslation(lng);
@@ -22,19 +23,12 @@ export default function Page({ params: { lng } }: any) {
           <div className="flex flex-col justify-center items-center h-full px-6 py-4 bg-[#FD536B] rounded-3xl gap-y-2 lg:gap-y-6 relative">
             <h3 className="title-card-home">Description</h3>
             <p className="text-sm xl:text-base overflow-y-scroll">
-              Sono un appassionato programmatore <b>FRONT-END</b> con una solida
-              esperienza nella progettazione e nello sviluppo di progetti web di
-              varia natura. Sono motivato a creare esperienze utente
-              straordinarie utilizzando le{' '}
-              <b>ultime tecnologie e design innovativi</b>.
-              <br />
-              <br /> La mia passione per la corsa mi ha insegnato l'importanza
-              della <b>perseveranza e della disciplina</b>, che applico anche
-              nel mio lavoro. <br />
-              <br />
-              Mi piace collaborare con altri professionisti del settore per
-              creare prodotti digitali di{' '}
-              <b>alta qualità che soddisfino le esigenze dei clienti</b>.
+              <Trans
+                i18nKey="home_description"
+                t={t}
+                // eslint-disable-next-line react/jsx-key
+                components={[<b />, <br />]}
+              />
             </p>
             <BiExpandVertical
               onClick={() => setExpandDescription((old) => !old)}

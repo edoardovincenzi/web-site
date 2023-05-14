@@ -22,3 +22,9 @@
     @apply flex items-center justify-center text-6xl md:text-8xl w-full h-[20%] md:h-[30%] text-center font-bold relative;
   }
 }
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
