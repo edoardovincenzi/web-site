@@ -1,5 +1,6 @@
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { MdOutlineEmail } from 'react-icons/md';
+import ChangeLanguages from './ChangeLanguages';
 
 const Footer = () => {
   return (
@@ -7,6 +8,7 @@ const Footer = () => {
       <FaLinkedin className="footer-icon" />
       <FaGithub className="footer-icon" />
       <MdOutlineEmail className="footer-icon" />
+      <ChangeLanguages />
     </footer>
   );
 };
