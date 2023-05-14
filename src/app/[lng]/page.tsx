@@ -20,7 +20,7 @@ export default function Page({ params: { lng } }: any) {
             expandDescription ? 'h-full' : 'h-4/6'
           }  md:h-full `}
         >
-          <div className="flex flex-col justify-center items-center h-full px-6 py-4 bg-[#FD536B] rounded-3xl gap-y-2 lg:gap-y-6 relative">
+          <div className="flex flex-col justify-center items-center h-full px-6 pt-4 pb-6 bg-[#FD536B] rounded-3xl gap-y-2 lg:gap-y-6 relative">
             <h3 className="title-card-home">Description</h3>
             <p className="text-sm xl:text-base overflow-y-scroll">
               <Trans
@@ -32,7 +32,7 @@ export default function Page({ params: { lng } }: any) {
             </p>
             <BiExpandVertical
               onClick={() => setExpandDescription((old) => !old)}
-              className="absolute right-5 bottom-3 md:hidden text-xl"
+              className="absolute right-3 bottom-3 md:hidden text-xl"
             />
           </div>
         </div>
