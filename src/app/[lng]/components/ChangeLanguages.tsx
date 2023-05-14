@@ -13,7 +13,7 @@ const ChangeLanguages = ({ lng }: any) => {
         .map((language) => {
           return (
             <span key={language} className="px-2">
-              <Link href={`/${language}/${pathname}`}>
+              <Link href={`/${language}/${pathname ?? ''}`}>
                 {language.toUpperCase()}
               </Link>
             </span>
