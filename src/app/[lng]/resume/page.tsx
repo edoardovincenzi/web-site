@@ -4,11 +4,11 @@ import { useTranslation } from '../../i18n';
 import ViewerCV from '../components/ViewerCV';
 
 export default async function Page({ params: { lng } }: any) {
-  const { t }: any = await useTranslation(lng, 'projects');
+  const { t }: any = await useTranslation(lng, 'resume');
 
   return (
     <div className="app-container container mx-auto overflow-y-auto">
-      <div className="app-header">
+      <div className="app-header py-6">
         <Link href={`/${lng}/`} replace className=" absolute left-0">
           <MdArrowBack className="icon-card-home" />
         </Link>

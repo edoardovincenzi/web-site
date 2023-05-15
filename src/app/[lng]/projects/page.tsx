@@ -7,15 +7,15 @@ import { SiTailwindcss, SiRedux } from 'react-icons/si';
 import { CardProjectprops } from '@/types';
 
 export default async function Page({ params: { lng } }: any) {
-  const { t }: any = await useTranslation(lng, 'resume');
+  const { t }: any = await useTranslation(lng, 'projects');
 
   return (
     <div className="app-container container mx-auto overflow-y-auto">
-      <div className="app-header py-4">
+      <div className="app-header py-6">
         <Link href={`/${lng}/`} replace className=" absolute left-0">
           <MdArrowBack className="icon-card-home" />
         </Link>
-        <h1 className="text-center">{t('title', 'Resume')}</h1>
+        <h1 className="text-center">{t('title', 'Projects')}</h1>
       </div>
       <div className="flex flex-wrap gap-4">
         {projectsList?.map((project, index) => (
