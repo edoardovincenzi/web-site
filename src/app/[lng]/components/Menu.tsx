@@ -5,7 +5,7 @@ import { MdWeb } from 'react-icons/md';
 import { RiContactsLine } from 'react-icons/ri';
 import { Trans } from 'react-i18next';
 
-const Cards = ({ t, lng }: any) => {
+const Menu = ({ t, lng }: any) => {
   return (
     <div className="flex max-md:flex-col w-full h-[80%] mb-4 gap-3">
       <div className={`transition-all w-full md:w-1/2 h-4/6 md:h-full `}>
@@ -50,7 +50,7 @@ const Cards = ({ t, lng }: any) => {
   );
 };
 
-export default Cards;
+export default Menu;
 
 const descriptionDefaultText = `I am a passionate FRONT-END programmer with solid experience in designing and developing various types of web projects. I am motivated to create extraordinary user experiences using the latest technologies and innovative designs.
 My passion for running has taught me the importance of perseverance and discipline, which I apply to my work as well.
