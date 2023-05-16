@@ -13,7 +13,7 @@ const Menu = ({ t, lng }: any) => {
           <h3 className="title-card-home">
             {t('description_card.title', 'Description')}
           </h3>
-          <p className="text-sm xl:text-base overflow-y-scroll">
+          <p className="text-sm md:text-base xl:text-lg 2xl:text-xl overflow-y-scroll">
             <Trans
               i18nKey="description_card.description"
               t={t}

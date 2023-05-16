@@ -4,6 +4,7 @@ export interface ParamsLng {
 
 export interface CardProjectprops {
   title: string;
+  description: string;
   libraries: ILibrary[];
   links: ILinks;
 }
@@ -15,6 +16,6 @@ export interface ILibrary {
 }
 
 export interface ILinks {
-  gitHubLink: string;
+  gitHubLink?: string;
   livelink: string;
 }

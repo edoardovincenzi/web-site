@@ -6,17 +6,27 @@ import { GoLinkExternal } from 'react-icons/go';
 import { CardProjectprops } from '@/types';
 import Link from 'next/link';
 
-const CardProject = ({ title, libraries, links }: CardProjectprops) => {
+const CardProject = ({
+  title,
+  description,
+  libraries,
+  links,
+}: CardProjectprops) => {
   return (
-    <div className="flex flex-col bg-clip-border rounded-xl bg-textCardDescription relative h-[35rem] w-full max-w-[28rem] items-center justify-center overflow-hidden text-center">
+    <div className="flex flex-col bg-clip-border rounded-xl mb-2 bg-textCardDescription relative h-[35rem] w-full max-w-[28rem] items-center justify-center overflow-hidden text-center">
       <div className="bg-clip-border overflow-hidden bg-transparent shadow-none absolute inset-0 m-0 h-full w-full rounded-none ">
         <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-textPrimary/100 via-textPrimary/90 to-textPrimary/80" />
       </div>
-      <div className="pb-2 relative py-14 px-4 w-full">
-        <h2 className="block antialiased tracking-normal text-4xl leading-[1.3] text-textCardDescription mb-6 font-medium ">
-          {title}
-        </h2>
-        <div className="p-6 grid grid-cols-3 gap-4 px-4 ">
+      <div className="pb-2 relative py-10 px-4 w-full grid grid-cols-1 grid-rows-2 h-full justify-center items-start">
+        <div>
+          <h2 className="block antialiased tracking-normal text-4xl leading-[1.3] text-textCardDescription mb-6 font-bold ">
+            {title.toUpperCase()}
+          </h2>
+          <p className="text-sm md:text-base row-span-3  text-textCardDescription">
+            {description}
+          </p>
+        </div>
+        <div className=" row-span-3  grid grid-cols-3 gap-4 px-4 pt-4">
           {libraries?.map((library, index) => {
             if (library?.icon) {
               return (
@@ -26,7 +36,7 @@ const CardProject = ({ title, libraries, links }: CardProjectprops) => {
                 >
                   <>
                     {library?.icon}
-                    <p className="text-xl text-textCardDescription">
+                    <p className="text-lg text-textCardDescription">
                       {library.libraryName}
                     </p>
                   </>
@@ -47,7 +57,7 @@ const CardProject = ({ title, libraries, links }: CardProjectprops) => {
                       backgroundPosition: 'center',
                     }}
                   />
-                  <p className="text-xl text-textCardDescription">
+                  <p className="text-lg text-textCardDescription">
                     {library.libraryName}
                   </p>
                 </div>
@@ -57,15 +67,19 @@ const CardProject = ({ title, libraries, links }: CardProjectprops) => {
             return <></>;
           })}
         </div>
-        <div className="flex justify-between items-center p-6 px-4 ">
-          <Link
-            href={links.gitHubLink}
-            target="_blank"
-            className="bg-textCardDescription flex justify-center items-center gap-x-2 rounded-xl p-3 min-w-[8rem] whitespace-nowrap"
-          >
-            <FaGithub className="text-xl" />
-            GitHub
-          </Link>
+        <div className="flex justify-between items-center p-4 px-4 ">
+          {links?.gitHubLink ? (
+            <Link
+              href={links.gitHubLink}
+              target="_blank"
+              className="bg-textCardDescription flex justify-center items-center gap-x-2 rounded-xl p-3 min-w-[8rem] whitespace-nowrap"
+            >
+              <FaGithub className="text-xl" />
+              GitHub
+            </Link>
+          ) : (
+            <div className="min-w-[8rem]"></div>
+          )}
           <Link
             href={links.livelink}
             target="_blank"
