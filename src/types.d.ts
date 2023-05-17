@@ -7,6 +7,7 @@ export interface CardProjectprops {
   description: string;
   libraries: ILibrary[];
   links: ILinks;
+  t?: any;
 }
 
 export interface ILibrary {

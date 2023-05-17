@@ -21,4 +21,22 @@
   .app-header {
     @apply flex items-center justify-center text-5xl md:text-6xl lg:text-7xl xl:text-8xl  w-full h-[20%] md:my-6 text-center font-bold relative;
   }
+  .icon-text-card-project {
+    @apply text-sm md:text-base text-textCardDescription;
+  }
+}
+
+#cv_pdf {
+  color: transparent;
+  background: linear-gradient(100deg, #eceff1 30%, #f6f7f8 50%, #eceff1 70%);
+  animation: loading 1.2s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 }

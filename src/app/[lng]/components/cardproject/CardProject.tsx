@@ -5,9 +5,12 @@ import { FaGithub } from 'react-icons/fa';
 import { GoLinkExternal } from 'react-icons/go';
 import { CardProjectprops } from '@/types';
 import Link from 'next/link';
+import TechnologyIcon from './TechnologyIcon';
+import TechnologyLinkImage from './TechnologyLinkImage';
 
 const CardProject = ({
   title,
+  t,
   description,
   libraries,
   links,
@@ -23,44 +26,27 @@ const CardProject = ({
             {title.toUpperCase()}
           </h2>
           <p className="text-sm md:text-base row-span-3  text-textCardDescription">
-            {description}
+            {t(description)}
           </p>
         </div>
         <div className=" row-span-3  grid grid-cols-3 gap-4 px-4 pt-4">
           {libraries?.map((library, index) => {
             if (library?.icon) {
               return (
-                <div
+                <TechnologyIcon
                   key={index}
-                  className="flex flex-col justify-center items-center gap-y-1"
-                >
-                  <>
-                    {library?.icon}
-                    <p className="text-lg text-textCardDescription">
-                      {library.libraryName}
-                    </p>
-                  </>
-                </div>
+                  icon={library.icon}
+                  libraryName={library?.libraryName}
+                />
               );
             }
             if (library?.iconLinkImage) {
               return (
-                <div
+                <TechnologyLinkImage
                   key={index}
-                  className="flex flex-col justify-center items-center gap-y-1"
-                >
-                  <div
-                    className={`h-9 w-9`}
-                    style={{
-                      background: `url("${library?.iconLinkImage}")`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                    }}
-                  />
-                  <p className="text-lg text-textCardDescription">
-                    {library.libraryName}
-                  </p>
-                </div>
+                  iconLinkImage={library.iconLinkImage}
+                  libraryName={library?.libraryName}
+                />
               );
             }
 

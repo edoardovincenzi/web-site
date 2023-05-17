@@ -1,4 +1,18 @@
 {
   "title": "Progetti",
-  "description_page": "Nel mio curriculum sono riportati tutti i miei contatti e le esperienze professionali. Inoltre, è possibile scaricarlo facilmente cliccando qui: download."
+  "description_page": "Nel mio curriculum sono riportati tutti i miei contatti e le esperienze professionali. Inoltre, è possibile scaricarlo facilmente cliccando qui: download.",
+  "projects": {
+    "user_management": {
+      "description": "Si tratta di un progetto di gestione degli utenti, dove è possibile aggiungere un utente tramite un modulo e poi trovarlo nella tabella sottostante. Puoi interagire con la tabella, modificarla ed editare i dati al suo interno. Inoltre, puoi visualizzare i dettagli dell'utente."
+    },
+    "dematech_impianti": {
+      "description": "Questo sito web è stato creato per l'azienda chiamata 'Dematech impianti' al fine di avere una vetrina online e pubblica."
+    },
+    "wedding_website": {
+      "description": "Questo sito web è stato commissionato per avere tutte le informazioni sul matrimonio in un unico luogo."
+    },
+    "co2_emissions": {
+      "description": "In questa web app, potrai visualizzare le emissioni di CO2 per paese, essere in grado di vedere il grafico delle emissioni di CO2 degli ultimi 6 mesi per un paese e calcolare le emissioni di CO2 con una ricerca avanzata per un paese specifico."
+    }
+  }
 }

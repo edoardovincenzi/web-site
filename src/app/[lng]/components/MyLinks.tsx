@@ -1,3 +1,5 @@
+'use client';
+
 import { EMAIL, LINK_GITHUB, LINK_LINKLEDIN } from '@/costant';
 import Link from 'next/link';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
@@ -14,7 +16,13 @@ const MyLinks = () => {
         <Link href={LINK_GITHUB} target="_blank">
           <FaGithub className="footer-icon" />
         </Link>
-        <Link href={`mailto:${EMAIL}`}>
+        <Link
+          href="#"
+          onClick={(e) => {
+            window.location.href = `mailto:${EMAIL}`;
+            e.preventDefault();
+          }}
+        >
           <MdOutlineEmail className="footer-icon" />
         </Link>
         <ChangeLanguages />

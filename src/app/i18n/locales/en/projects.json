@@ -1,4 +1,18 @@
 {
   "title": "Projects",
-  "description_page": "All my contact details and professional experiences are listed in my resume. Moreover, it can be easily downloaded by clicking here: download."
+  "description_page": "All my contact details and professional experiences are listed in my resume. Moreover, it can be easily downloaded by clicking here: download.",
+  "projects": {
+    "user_management": {
+      "description": "It is a user management project, where you can add a user through the form and then find it in the table below. You can interact with the table, editing it and modifying the data within. Additionally, you can view user details."
+    },
+    "dematech_impianti": {
+      "description": "This website has been created for the company named 'Dematech impianti' to have an online and public showcase."
+    },
+    "wedding_website": {
+      "description": "This website has been commissioned to have all the wedding information in one place."
+    },
+    "co2_emissions": {
+      "description": "In this web app, you will view CO2 emissions by country, be able to see the CO2 chart of the last 6 months for a country, and calculate CO2 with advanced search for a specific country."
+    }
+  }
 }
