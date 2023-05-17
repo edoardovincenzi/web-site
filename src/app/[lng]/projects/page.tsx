@@ -2,12 +2,12 @@
 
 import Link from 'next/link';
 import { MdArrowBack } from 'react-icons/md';
-import { useTranslation } from '../../i18n';
+import { useTranslation } from '../../i18n/client';
 import CardProject from '../components/cardproject/CardProject';
 import { projectsList } from './dataProjects';
 
-export default async function Page({ params: { lng } }: any) {
-  const { t }: any = await useTranslation(lng, 'projects');
+export default function Page({ params: { lng } }: any) {
+  const { t }: any = useTranslation(lng, 'projects');
 
   return (
     <div className="app-container container mx-auto overflow-y-auto">
