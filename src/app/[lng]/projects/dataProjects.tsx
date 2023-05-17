@@ -7,6 +7,7 @@ import {
   SiMui,
   SiTypescript,
   SiReactquery,
+  SiI18Next
 } from 'react-icons/si';
 import { CardProjectprops } from '@/types';
 
@@ -82,6 +83,10 @@ export const projectsList: CardProjectprops[] = [
         icon: <SiTailwindcss className="text-4xl text-cyan-500" />,
         libraryName: 'Tailwind',
       },
+      {
+        icon: <SiI18Next className="text-4xl text-[#26A69A]" />,
+        libraryName: 'I18Next',
+      }
     ],
     links: {
       gitHubLink: 'https://github.com/edoardovincenzi/mywedding',
