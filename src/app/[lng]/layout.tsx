@@ -51,7 +51,9 @@ export default function RootLayout({
       </head>
       <body className="bg-bgPrimary text-textPrimary">
         <MyLinks />
-        <main className=" mx-3 ">{children}</main>
+        <main className="mx-auto container">
+          <div className=" mx-3 ">{children}</div>
+        </main>
       </body>
     </html>
   );
