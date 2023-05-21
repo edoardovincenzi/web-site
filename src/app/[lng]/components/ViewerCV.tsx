@@ -8,7 +8,7 @@ const ViewerCV = () => {
           id="cv_pdf"
           loading="lazy"
           className="absolute w-full h-full top-0 left-0 p-0 m-0 border-none"
-          src="https://www.canva.com/design/DAFL1aIpLqc/view?embed"
+          src="https://www.canva.com/design/DAFjjXFviyU/view?embed"
           allowFullScreen
         ></iframe>
       </div>
