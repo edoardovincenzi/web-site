@@ -1,0 +1,13 @@
+{
+  "home_title": "Edoardo Vincenzi",
+  "description_card": {
+    "title": "Description",
+    "description": "Je suis un programmeur passionné du <0>FRONT-END</0> avec une solide expérience dans la conception et le développement de projets web de différentes natures. Je suis motivé à créer des expériences utilisateur extraordinaires en utilisant les <0>dernières technologies et des designs innovants</0>. <1></1> <1></1> Ma passion pour la course m'a enseigné l'importance de la <0>persévérance et de la discipline</0>, que j'applique également dans mon travail. <1></1> J'aime collaborer avec d'autres professionnels de l'industrie pour créer des produits numériques de <0>haute qualité qui répondent aux besoins des clients</0>."
+  },
+  "projects_card": {
+    "title": "Projets"
+  },
+  "resume_card": {
+    "title": "Résumé"
+  }
+}
