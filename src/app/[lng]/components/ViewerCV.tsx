@@ -9,7 +9,7 @@ export default function ViewerCV({ tCV }: any) {
           loading="lazy"
           className="absolute w-full h-full top-0 left-0 p-0 m-0 border-none"
           src={tCV(
-            'link',
+            'link_view',
             'https://www.canva.com/design/DAFjjXFviyU/view?embed'
           )}
           allowFullScreen
