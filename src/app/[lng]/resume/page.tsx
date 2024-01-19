@@ -6,6 +6,7 @@ import ViewerCV from '../components/ViewerCV';
 
 export default async function Page({ params: { lng } }: any) {
   const { t }: any = await useTranslation(lng, 'resume');
+  const { t: tCV }: any = await useTranslation(lng, 'cv');
 
   return (
     <div className="app-container container mx-auto overflow-y-auto">
@@ -19,13 +20,13 @@ export default async function Page({ params: { lng } }: any) {
         <p className="text-base md:text-lg lg:text-xl">
           {t('description_page', defaultDescriptionPage)}
         </p>
-        <Link href={SHARE_DOWNLOAD_CV} target="_blank">
+        <Link href={t('link_download', SHARE_DOWNLOAD_CV)} target="_blank">
           <p className="text-base md:text-lg lg:text-xl underline cursor-pointer">
             DOWNLOAD.
           </p>
         </Link>
       </div>
-      <ViewerCV />
+      <ViewerCV tCV={tCV} />
     </div>
   );
 }

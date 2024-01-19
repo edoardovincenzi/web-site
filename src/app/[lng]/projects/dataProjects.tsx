@@ -7,13 +7,13 @@ import {
   SiMui,
   SiTypescript,
   SiReactquery,
-  SiI18Next
+  SiI18Next,
 } from 'react-icons/si';
 import { CardProjectprops } from '@/types';
 
 export const projectsList: CardProjectprops[] = [
   {
-    title: 'User management',
+    title: 'projects.user_management.title',
     description: 'projects.user_management.description',
     libraries: [
       {
@@ -47,7 +47,7 @@ export const projectsList: CardProjectprops[] = [
     },
   },
   {
-    title: 'Dematech impianti',
+    title: 'projects.dematech_impianti.title',
     description: 'projects.dematech_impianti.description',
     libraries: [
       {
@@ -68,7 +68,7 @@ export const projectsList: CardProjectprops[] = [
     },
   },
   {
-    title: 'Wedding website',
+    title: 'projects.wedding_website.title',
     description: 'projects.wedding_website.description',
     libraries: [
       {
@@ -86,7 +86,7 @@ export const projectsList: CardProjectprops[] = [
       {
         icon: <SiI18Next className="text-4xl text-[#26A69A]" />,
         libraryName: 'I18Next',
-      }
+      },
     ],
     links: {
       gitHubLink: 'https://github.com/edoardovincenzi/mywedding',
@@ -94,7 +94,7 @@ export const projectsList: CardProjectprops[] = [
     },
   },
   {
-    title: 'CO2 emissions',
+    title: 'projects.co2_emissions.title',
     description: 'projects.co2_emissions.description',
     libraries: [
       {

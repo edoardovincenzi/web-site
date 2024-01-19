@@ -23,7 +23,7 @@ const CardProject = ({
       <div className="pb-2 relative py-10 px-4 w-full grid grid-cols-1 grid-rows-2 h-full justify-center items-start">
         <div>
           <h2 className="block antialiased tracking-normal text-3xl leading-[1.3] text-textCardDescription mb-6 font-bold ">
-            {title.toUpperCase()}
+            {t(title).toUpperCase()}
           </h2>
           <p className="text-sm md:text-base row-span-3  text-textCardDescription">
             {t(description)}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ViewerCV = () => {
+export default function ViewerCV({ tCV }: any) {
   return (
     <div className="flex max-md:flex-col w-full h-[80%] xl:h-[70%] gap-3">
       <div className="bg-[#f2f2f2] relative w-full mt-3 h-0 pt-[141.4286%] pb-0 shadow-[0 2px 8px 0 rgba(63,69,81,0.16)] overflow-hidden rounded-lg will-change-auto">
@@ -8,12 +8,13 @@ const ViewerCV = () => {
           id="cv_pdf"
           loading="lazy"
           className="absolute w-full h-full top-0 left-0 p-0 m-0 border-none"
-          src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFzPAI8NMo&#x2F;view?embed"
+          src={tCV(
+            'link',
+            'https://www.canva.com/design/DAFjjXFviyU/view?embed'
+          )}
           allowFullScreen
         ></iframe>
       </div>
     </div>
   );
-};
-
-export default ViewerCV;
+}
