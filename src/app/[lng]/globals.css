@@ -10,7 +10,7 @@
     @apply text-4xl md:text-6xl;
   }
   .card-small-home {
-    @apply flex justify-center items-center h-1/2 rounded-full gap-6 cursor-pointer;
+    @apply flex justify-center items-center h-full rounded-full gap-6 cursor-pointer;
   }
   .footer-icon {
     @apply text-4xl cursor-pointer;
