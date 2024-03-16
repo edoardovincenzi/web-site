@@ -1,6 +1,6 @@
 'use client';
 
-import { EMAIL, LINK_GITHUB, LINK_LINKLEDIN } from '@/costant';
+import { EMAIL, LINK_GITHUB, LINK_LINKLEDIN } from '@/constant';
 import Link from 'next/link';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { MdOutlineEmail } from 'react-icons/md';

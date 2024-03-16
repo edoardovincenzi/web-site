@@ -1,4 +1,4 @@
-import { SHARE_DOWNLOAD_CV } from '@/costant';
+import { SHARE_DOWNLOAD_CV } from '@/constant';
 import Link from 'next/link';
 import { MdArrowBack } from 'react-icons/md';
 import { useTranslation } from '../../i18n';
