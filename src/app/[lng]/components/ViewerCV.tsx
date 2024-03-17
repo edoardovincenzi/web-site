@@ -1,20 +1,32 @@
+'use client';
 import React from 'react';
+import { pdfjs } from 'react-pdf';
+import { useState } from 'react';
+import { Document, Page } from 'react-pdf';
+
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 export default function ViewerCV({ tCV }: any) {
+  const [numPages, setNumPages] = useState<number>();
+
+  function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
+    setNumPages(numPages);
+  }
+
   return (
-    <div className="flex max-md:flex-col w-full h-[80%] xl:h-[70%] gap-3">
-      <div className="bg-[#f2f2f2] relative w-full mt-3 h-0 pt-[141.4286%] pb-0 shadow-[0 2px 8px 0 rgba(63,69,81,0.16)] overflow-hidden rounded-lg will-change-auto">
-        <iframe
-          id="cv_pdf"
-          loading="lazy"
-          className="absolute w-full h-full top-0 left-0 p-0 m-0 border-none"
-          src={tCV(
-            'link_view',
-            'https://www.canva.com/design/DAFjjXFviyU/view?embed'
-          )}
-          allowFullScreen
-        ></iframe>
-      </div>
+    <div>
+      <Document
+        file={tCV}
+        onLoadSuccess={onDocumentLoadSuccess}
+        className="flex w-full flex-wrap justify-center mt-6 mb-3"
+      >
+        {new Array(numPages).fill('').map((_, index) => (
+          <Page key={index} pageNumber={index + 1} />
+        ))}
+      </Document>
     </div>
   );
 }

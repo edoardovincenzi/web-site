@@ -9,7 +9,7 @@ export default async function Page({ params: { lng } }: any) {
   const { t: tCV }: any = await useTranslation(lng, 'cv');
 
   return (
-    <div className="app-container container mx-auto overflow-y-auto">
+    <div className="app-container container mx-auto overflow-y-auto mb-3">
       <div className="app-header py-6">
         <Link href={`/${lng}/`} replace className=" absolute left-0">
           <MdArrowBack className="icon-card-home" />
@@ -26,7 +26,13 @@ export default async function Page({ params: { lng } }: any) {
           </p>
         </Link>
       </div>
-      <ViewerCV tCV={tCV} />
+      <ViewerCV
+        tCV={tCV(
+          'link_view',
+          '/asset/cv/Curriculum_vitae_Vincenzi_Edoardo_EN.pdf'
+        )}
+      />
+      {/* <ViewerCV tCV={tCV} /> */}
     </div>
   );
 }
