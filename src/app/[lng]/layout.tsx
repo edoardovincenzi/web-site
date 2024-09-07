@@ -4,6 +4,7 @@ import { languages } from '../i18n/settings';
 import { ParamsLng } from '@/types';
 import MyLinks from './components/MyLinks';
 import { Poppins } from '@next/font/google';
+import Script from 'next/script';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -48,6 +49,14 @@ export default function RootLayout({
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
+        <Script
+          id="lite-analytics"
+          src="https://liteanalytics.com/lite.js"
+          strategy="afterInteractive"
+          async
+          defer
+          data-host="edoardovincenzi.com"
+        />
       </head>
       <body className="bg-bgPrimary text-textPrimary">
         <MyLinks />
