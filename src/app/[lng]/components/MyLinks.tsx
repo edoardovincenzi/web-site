@@ -25,7 +25,7 @@ const MyLinks = () => {
         >
           <MdOutlineEmail className="footer-icon" />
         </Link>
-        <ChangeLanguages />
+        {/* <ChangeLanguages /> */}
       </div>
     </div>
   );
