@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "title": "Edoardo Vincenzi — Senior Front-end Developer",
+    "description": "Portfolio di Edoardo Vincenzi, Senior Front-end Developer freelance. React, Next.js, TypeScript. Oltre 8 anni di esperienza."
+  },
+  "header": {
+    "switchLang": "EN"
+  },
+  "hero": {
+    "subtitle": "Sono un freelance",
+    "title": "Senior<br></br> Front-end Engineer.",
+    "tagline": "Realizzo applicazioni web e mobile scalabili e di alta qualità. Oltre 8 anni di esperienza nel trasformare problemi complessi in interfacce pulite e intuitive.",
+    "cta": "Scopri di più",
+    "ctaContact": "Contattami"
+  },
+  "about": {
+    "sectionTitle": "Chi sono.",
+    "p1": "Sono un Frontend Engineer con 8 anni di esperienza nella realizzazione di applicazioni web e mobile scalabili e di alta qualità. Mi piace affrontare problemi complessi e trasformarli in interfacce utente pulite e intuitive attraverso un'architettura curata e attenzione ai dettagli.",
+    "p2": "Guidato dalla curiosità e da un forte orientamento al prodotto, perfeziono continuamente le mie competenze e abbraccio nuove tecnologie. Nel corso della mia carriera ho collaborato con aziende di diverse dimensioni, dalle startup alle realtà enterprise, occupandomi di tutto ciò che riguarda il front-end: dall'architettura dei componenti alla gestione dello stato, dalle integrazioni API al design system.",
+    "p3": "Un grande software è il risultato di solide pratiche ingegneristiche unite a un profondo focus sull'esperienza utente e sulla manutenibilità a lungo termine. Oggi lavoro come freelance, aiutando i miei clienti a trasformare le loro idee in interfacce moderne e funzionali."
+  },
+  "experience": {
+    "sectionTitle": "Esperienze.",
+    "viewCv": "Vedi CV",
+    "downloadCv": "Scarica",
+    "pdfFallback": "Il tuo browser non supporta la visualizzazione PDF integrata.",
+    "items": [
+      {
+        "period": "Set 2024 — Presente",
+        "role": "Front-end Engineer",
+        "company": "Freelance",
+        "description": "Collaboro con diverse aziende come consulente front-end. Refactoring di codebase React/Next.js su larga scala per migliorare scalabilità, con introduzione di strategie di testing robuste. Sviluppo da zero di piattaforme gestionali complesse con workflow avanzati, permessi basati su ruoli e integrazioni con mappe. Sviluppo di applicazioni back-office e app mobile cross-platform per una startup. Realizzazione di una piattaforma di guida finanziaria accessibile secondo le linee guida WCAG. Progettazione di un sistema CRM completo focalizzato su performance e UX.",
+        "tags": ["React", "Next.js", "TypeScript", "React Native", "Redux", "Redux-Saga", "Tailwind CSS", "ShadcN UI", "Ant Design", "Turborepo", "React Query", "Playwright", "Vitest", "NextAuth", "Leaflet"]
+      },
+      {
+        "period": "Ago 2024 — Giu 2025",
+        "role": "Front-end Engineer",
+        "company": "Primaton",
+        "description": "Implementazione di linee guida di design e sviluppo di nuove applicazioni da zero. Progettazione dell'intera esperienza utente con Figma. Utilizzo di architettura Micro Frontend con Module Federation per soluzioni modulari e scalabili. Sviluppo di una suite di testing completa per E2E e unit testing.",
+        "tags": ["React", "TypeScript", "Zustand", "Material UI", "Redux", "Tailwind CSS", "Figma", "Module Federation", "Cypress", "React Testing Library"]
+      },
+      {
+        "period": "Giu 2024 — Lug 2024",
+        "role": "Front-end Engineer & UI/Designer",
+        "company": "Alma Iura",
+        "description": "Sviluppo software da zero con Vue.js e TypeScript. Progettazione dell'intero flusso utente e interfaccia grafica con Figma e Penpot. Implementazione di copertura test E2E e unit testing.",
+        "tags": ["Vue.js", "TypeScript", "Figma", "Penpot", "Cypress", "Vitest"]
+      },
+      {
+        "period": "Ott 2021 — Ott 2023",
+        "role": "Front-end Developer",
+        "company": "Archiva Group",
+        "description": "Sviluppo di nuove applicazioni per la gestione documentale e firma digitale. Definizione di linee guida frontend per collaboratori esterni e interni e progettazione di un tema aziendale per Material UI per velocizzare la creazione di nuove applicazioni.",
+        "tags": ["React", "TypeScript", "Redux", "Zustand", "Material UI", "Storybook", "Styled Components", "Tailwind CSS", "i18n"]
+      },
+      {
+        "period": "Gen 2021 — Ott 2021",
+        "role": "Software Developer",
+        "company": "Enerj",
+        "description": "Sviluppo CRM e gestione database per un'azienda di gestione energetica.",
+        "tags": ["HTML", "CSS", "JavaScript", "jQuery", "C#", ".NET Framework", "PostgreSQL"]
+      },
+      {
+        "period": "Giu 2017 — Mar 2019",
+        "role": "ICT Developer",
+        "company": "Archiva Group",
+        "description": "Sviluppo e modifica di applicazioni WPF. Utilizzo di strumenti per il mapping di dati sorgente (XML, flat file, CSV, EDIFACT) verso tabelle di data warehouse.",
+        "tags": ["C#", "WPF", "Informatica", "Altova MapForce"]
+      },
+      {
+        "period": "Ott 2014 — Dic 2020",
+        "role": "Laurea in Informatica",
+        "company": "Università degli Studi di Verona",
+        "description": "Laurea triennale in Informatica. GPA di 3.7 sulla scala americana (su una scala di 4.0), equivalente a 92 punti.",
+        "tags": []
+      }
+    ]
+  },
+  "contact": {
+    "title": "Lavoriamo insieme?",
+    "description": "Hai un progetto in mente o cerchi un consulente front-end? Scrivimi, sarò felice di parlarne.",
+    "cta": "Scrivimi"
+  },
+  "footer": {
+    "copyright": "Tutti i diritti riservati."
+  }
+}
