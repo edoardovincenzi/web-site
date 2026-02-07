@@ -144,7 +144,7 @@ export default function HeroSection() {
           {/* Secondary CTA – outline */}
           <a
             href="#contact"
-            className="group relative inline-flex items-center overflow-hidden rounded-full border border-accent/30 px-7 py-3.5 font-medium text-muted transition-all duration-300 hover:border-accent/50 hover:text-foreground hover:bg-accent/10 hover:scale-[1.03]"
+            className="group relative inline-flex items-center overflow-hidden rounded-full border border-accent/60 px-7 py-3.5 font-medium text-white transition-all duration-300 hover:border-accent/80 hover:bg-accent/10 hover:scale-[1.03]"
           >
             {t("ctaContact")}
           </a>

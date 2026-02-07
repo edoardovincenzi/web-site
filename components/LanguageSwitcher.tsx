@@ -33,7 +33,7 @@ export default function LanguageSwitcher() {
           className={`relative rounded-full px-3 py-1 text-xs font-semibold tracking-wide transition-all duration-200 ${
             locale === code
               ? "bg-accent text-white shadow-sm"
-              : "text-muted hover:text-foreground"
+              : "text-foreground/70 hover:text-foreground"
           }`}
         >
           {label}
