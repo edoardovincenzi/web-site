@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getTranslations } from 'next-intl/server';
+import Script from 'next/script';
 import './globals.css';
 
 const SITE_URL = 'https://www.edoardovincenzi.com';
@@ -74,6 +75,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <Script defer async data-host="edoardovincenzi.com" src="https://liteanalytics.com/lite.js" strategy="lazyOnload" />
       </body>
     </html>
   );

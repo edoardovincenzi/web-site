@@ -59,10 +59,10 @@ export default function ContactSection() {
             className="pointer-events-none absolute inset-0"
             animate={{
               background: [
-                "radial-gradient(circle at 30% 20%, rgba(59,130,246,0.12), transparent 50%)",
-                "radial-gradient(circle at 70% 80%, rgba(59,130,246,0.12), transparent 50%)",
-                "radial-gradient(circle at 50% 30%, rgba(59,130,246,0.12), transparent 50%)",
-                "radial-gradient(circle at 30% 20%, rgba(59,130,246,0.12), transparent 50%)",
+                "radial-gradient(circle at 30% 20%, rgba(99,102,241,0.12), transparent 50%)",
+                "radial-gradient(circle at 70% 80%, rgba(99,102,241,0.12), transparent 50%)",
+                "radial-gradient(circle at 50% 30%, rgba(99,102,241,0.12), transparent 50%)",
+                "radial-gradient(circle at 30% 20%, rgba(99,102,241,0.12), transparent 50%)",
               ],
             }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -74,7 +74,7 @@ export default function ContactSection() {
             className="pointer-events-none absolute inset-0 transition-opacity duration-300"
             style={{
               opacity: isHovering ? 1 : 0,
-              background: `radial-gradient(500px circle at ${mousePos.x}px ${mousePos.y}px, rgba(59,130,246,0.12), transparent 40%)`,
+              background: `radial-gradient(500px circle at ${mousePos.x}px ${mousePos.y}px, rgba(99,102,241,0.12), transparent 40%)`,
             }}
           />
 
@@ -108,7 +108,7 @@ export default function ContactSection() {
             >
               <a href="mailto:edoardo.vincenzi95@gmail.com" className="group relative inline-block">
                 <span className="absolute -inset-1 rounded-full bg-accent/30 blur-xl transition-all duration-500 group-hover:bg-accent/50 group-hover:blur-2xl animate-[glow-pulse_3s_ease-in-out_infinite]" />
-                <span className="relative inline-flex items-center overflow-hidden rounded-full bg-accent px-8 py-3.5 font-medium text-white transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_40px_rgba(59,130,246,0.4)]">
+                <span className="relative inline-flex items-center overflow-hidden rounded-full bg-accent px-8 py-3.5 font-medium text-white transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_40px_rgba(99,102,241,0.4)]">
                   <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
                   <span className="relative">{t("cta")}</span>
                 </span>
@@ -130,7 +130,7 @@ export default function ContactSection() {
                   target={link.href.startsWith("mailto") ? undefined : "_blank"}
                   rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                   aria-label={link.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-muted transition-all duration-300 hover:border-accent/50 hover:text-accent hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-muted transition-all duration-300 hover:border-accent/50 hover:text-accent hover:shadow-[0_0_15px_rgba(99,102,241,0.15)]"
                 >
                   {link.icon}
                 </a>

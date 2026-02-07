@@ -134,20 +134,19 @@ export default function HeroSection() {
         >
           {/* Primary CTA with glow */}
           <a href="#about" className="group relative inline-block">
-            <span className="absolute -inset-1 rounded-full bg-accent/30 blur-xl transition-all duration-500 group-hover:bg-accent/50 group-hover:blur-2xl animate-[glow-pulse_3s_ease-in-out_infinite]" />
-            <span className="relative inline-flex items-center overflow-hidden rounded-full bg-accent px-7 py-3.5 font-medium text-white transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_40px_rgba(59,130,246,0.4)]">
-              <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
+            <span className="absolute -inset-1 rounded-full bg-accent/15 blur-lg transition-all duration-500 group-hover:bg-accent/30 group-hover:blur-xl" />
+            <span className="relative inline-flex items-center overflow-hidden rounded-full bg-accent/80 px-7 py-3.5 font-medium text-white transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_30px_rgba(99,102,241,0.25)]">
+              <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
               <span className="relative">{t("cta")}</span>
             </span>
           </a>
 
-          {/* Secondary CTA with glow */}
-          <a href="#contact" className="group relative inline-block">
-            <span className="absolute -inset-1 rounded-full bg-accent/30 blur-xl transition-all duration-500 group-hover:bg-accent/50 group-hover:blur-2xl animate-[glow-pulse_3s_ease-in-out_infinite]" />
-            <span className="relative inline-flex items-center overflow-hidden rounded-full bg-accent px-7 py-3.5 font-medium text-white transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_40px_rgba(59,130,246,0.4)]">
-              <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
-              <span className="relative">{t("ctaContact")}</span>
-            </span>
+          {/* Secondary CTA – outline */}
+          <a
+            href="#contact"
+            className="group relative inline-flex items-center overflow-hidden rounded-full border border-accent/30 px-7 py-3.5 font-medium text-muted transition-all duration-300 hover:border-accent/50 hover:text-foreground hover:bg-accent/10 hover:scale-[1.03]"
+          >
+            {t("ctaContact")}
           </a>
         </motion.div>
       </div>
