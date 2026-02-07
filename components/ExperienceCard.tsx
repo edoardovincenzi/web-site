@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 interface ExperienceCardProps {
   index: number;
@@ -24,6 +24,7 @@ export default function ExperienceCard({
 }: ExperienceCardProps) {
   const isLast = index === total - 1;
   const cardRef = useRef<HTMLDivElement>(null);
+  const [stickyTop, setStickyTop] = useState("6rem");
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start 0.85", "start 0.5"],
@@ -31,15 +32,32 @@ export default function ExperienceCard({
   const dotScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const dotOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
+  useLayoutEffect(() => {
+    if (!cardRef.current) return;
+    const measure = () => {
+      const cardHeight = cardRef.current!.offsetHeight;
+      const available = window.innerHeight;
+      const desiredTop = 96; // 6rem
+      if (cardHeight > available - desiredTop) {
+        // Card taller than viewport: stick when bottom is visible
+        setStickyTop(`${available - cardHeight - 32}px`);
+      } else {
+        setStickyTop("6rem");
+      }
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
   return (
     <>
       <div
         ref={cardRef}
-        className="sticky flex flex-col after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:h-80 after:bg-background after:content-['']"
+        className="sticky flex flex-col after:pointer-events-none after:absolute after:inset-x-0 after:top-full after:h-80 after:bg-background after:content-[''] sm:min-h-[var(--card-stack-height)]"
         style={{
-          top: "6rem",
+          top: stickyTop,
           zIndex: index,
-          minHeight: "var(--card-stack-height)",
         }}
       >
         {/* Transparent spacer — lets previous card peek through */}
