@@ -19,6 +19,35 @@
     "p2": "Driven by curiosity and a strong product mindset, I continuously refine my skills and embrace new technologies. Throughout my career I've collaborated with companies of different sizes, from startups to enterprise organizations, handling everything front-end: from component architecture to state management, API integrations to design systems.",
     "p3": "Great software is the result of solid engineering practices combined with a deep focus on user experience and long-term maintainability. Today I work as a freelancer, helping my clients turn their ideas into modern and functional interfaces."
   },
+  "skills": {
+    "sectionTitle": "Skills.",
+    "categories": {
+      "frontend": {
+        "title": "Frontend",
+        "items": ["React", "Next.js", "Vue.js", "TypeScript", "JavaScript", "HTML", "CSS"]
+      },
+      "mobile": {
+        "title": "Mobile",
+        "items": ["React Native", "Expo", "NativeWind", "Supabase", "EAS"]
+      },
+      "state": {
+        "title": "State Management",
+        "items": ["Redux", "Redux-Saga", "Zustand", "React Query"]
+      },
+      "ui": {
+        "title": "UI & Styling",
+        "items": ["Tailwind CSS", "Material UI", "ShadcN UI", "Ant Design", "Styled Components", "Storybook"]
+      },
+      "testing": {
+        "title": "Testing",
+        "items": ["Playwright", "Cypress", "Vitest", "Jest", "React Testing Library", "React Native Testing Library", "Maestro"]
+      },
+      "tools": {
+        "title": "Tools & Architecture",
+        "items": ["Turborepo", "Module Federation", "Figma", "Git", "i18n", "NextAuth", "Sentry"]
+      }
+    }
+  },
   "experience": {
     "sectionTitle": "Experience.",
     "viewCv": "View CV",
