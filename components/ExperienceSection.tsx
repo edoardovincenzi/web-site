@@ -2,13 +2,15 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useScroll, useTransform } from "motion/react";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import ExperienceCard from "./ExperienceCard";
 import CvModal from "./CvModal";
 
 export default function ExperienceSection() {
   const t = useTranslations("experience");
   const [isCvOpen, setIsCvOpen] = useState(false);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [progressVisible, setProgressVisible] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
@@ -33,8 +35,50 @@ export default function ExperienceSection() {
 
   const items = [0, 1, 2, 3, 4, 5, 6] as const;
 
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on("change", (v) => {
+      setProgressVisible(v > 0.01 && v < 0.99);
+      setCurrentStep(
+        Math.min(items.length, Math.max(1, Math.ceil(v * items.length)))
+      );
+    });
+    return unsubscribe;
+  }, [scrollYProgress, items.length]);
+
   return (
     <section id="experience" aria-labelledby="experience-heading" className="pb-16 pt-32">
+      {/* Mobile floating progress indicator */}
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 transition-all duration-300 sm:hidden ${
+          progressVisible
+            ? "translate-y-0 opacity-100"
+            : "translate-y-4 opacity-0"
+        }`}
+      >
+        <div className="flex items-center gap-3 rounded-full border border-card-border bg-card-bg/90 px-4 py-2.5 shadow-lg shadow-black/40 backdrop-blur-md">
+          <div className="flex items-center gap-1.5">
+            {items.map((i) => (
+              <div
+                key={i}
+                className={`rounded-full transition-all duration-300 ${
+                  i + 1 < currentStep
+                    ? "h-1.5 w-1.5 bg-accent"
+                    : i + 1 === currentStep
+                      ? "h-2 w-2 bg-accent shadow-[0_0_6px_var(--accent)]"
+                      : "h-1.5 w-1.5 bg-card-border"
+                }`}
+              />
+            ))}
+          </div>
+          <span className="text-xs font-medium tabular-nums text-muted">
+            {currentStep}
+            <span className="text-card-border">/</span>
+            {items.length}
+          </span>
+        </div>
+      </div>
+
       <div className="mx-auto max-w-5xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
