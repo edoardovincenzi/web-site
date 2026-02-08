@@ -50,7 +50,16 @@ export default function ExperienceSection() {
     const cards = cardsRef.current.querySelectorAll<HTMLElement>(":scope > .sticky");
     const target = cards[index];
     if (!target) return;
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    // scrollIntoView doesn't work reliably on sticky elements — it reads
+    // the visual (stuck) position instead of the layout position.
+    // Walk the offsetParent chain to get the true document-level offset.
+    let top = 0;
+    let el: HTMLElement | null = target;
+    while (el) {
+      top += el.offsetTop;
+      el = el.offsetParent as HTMLElement | null;
+    }
+    window.scrollTo({ top, behavior: "smooth" });
   }, []);
 
   return (
