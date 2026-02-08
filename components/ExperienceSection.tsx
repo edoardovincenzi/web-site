@@ -35,31 +35,69 @@ export default function ExperienceSection() {
 
   const items = [0, 1, 2, 3, 4, 5, 6] as const;
 
+  // Measure the absolute Y offset where each card starts in the document.
+  // Spacer divs between cards are NOT sticky, so their positions are reliable.
+  // Children of cardsRef: [sticky0, spacer0, sticky1, spacer1, …]
+  const cardOffsetsRef = useRef<number[]>([]);
+
+  useEffect(() => {
+    const measure = () => {
+      if (!cardsRef.current) return;
+      const children = cardsRef.current.children;
+      const total = Math.floor(children.length / 2);
+      const offsets: number[] = [];
+
+      // Card 0 starts at the top of the cards container
+      offsets.push(
+        cardsRef.current.getBoundingClientRect().top + window.scrollY
+      );
+
+      // Card i (i>0) starts right after the spacer that follows card i-1
+      for (let i = 1; i < total; i++) {
+        const spacer = children[i * 2 - 1] as HTMLElement;
+        if (spacer) {
+          offsets.push(
+            spacer.getBoundingClientRect().bottom + window.scrollY
+          );
+        }
+      }
+
+      cardOffsetsRef.current = offsets;
+    };
+
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (v) => {
       setProgressVisible(v > 0.01 && v < 0.99);
-      setCurrentStep(
-        Math.max(1, Math.min(items.length, Math.floor(v * items.length) + 1))
-      );
+
+      const offsets = cardOffsetsRef.current;
+      if (offsets.length === 0) return;
+
+      const scrollY = window.scrollY;
+      const vh = window.innerHeight;
+
+      // Walk backwards: the first card whose offset we've scrolled past is current
+      let step = 1;
+      for (let i = offsets.length - 1; i >= 1; i--) {
+        if (scrollY >= offsets[i] - vh * 0.2) {
+          step = i + 1;
+          break;
+        }
+      }
+      setCurrentStep(step);
     });
     return unsubscribe;
-  }, [scrollYProgress, items.length]);
+  }, [scrollYProgress]);
 
   const scrollToCard = useCallback((index: number) => {
-    if (!timelineRef.current) return;
-    const vh = window.innerHeight;
-    const rect = timelineRef.current.getBoundingClientRect();
-    const absTop = rect.top + window.scrollY;
-    // Reproduce the useScroll offsets: ["start 0.8", "end 0.7"]
-    const scrollStart = absTop - vh * 0.8;
-    const scrollEnd = absTop + rect.height - vh * 0.7;
-    // Place scroll slightly past the card boundary to avoid step ambiguity
-    const progress = (index + 0.1) / items.length;
-    window.scrollTo({
-      top: scrollStart + progress * (scrollEnd - scrollStart),
-      behavior: "smooth",
-    });
-  }, [items.length]);
+    const offsets = cardOffsetsRef.current;
+    if (index < 0 || index >= offsets.length) return;
+    window.scrollTo({ top: offsets[index], behavior: "smooth" });
+  }, []);
 
   return (
     <section id="experience" aria-labelledby="experience-heading" className="pb-16 pt-32">
