@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion, useScroll, useTransform } from "motion/react";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import ExperienceCard from "./ExperienceCard";
 import CvModal from "./CvModal";
 
@@ -45,38 +45,82 @@ export default function ExperienceSection() {
     return unsubscribe;
   }, [scrollYProgress, items.length]);
 
+  const scrollToCard = useCallback((index: number) => {
+    if (!cardsRef.current) return;
+    const cards = cardsRef.current.querySelectorAll<HTMLElement>(":scope > .sticky");
+    const target = cards[index];
+    if (!target) return;
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
   return (
     <section id="experience" aria-labelledby="experience-heading" className="pb-16 pt-32">
       {/* Mobile floating progress indicator */}
       <div
-        aria-hidden="true"
-        className={`pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 transition-all duration-300 sm:hidden ${
+        className={`fixed bottom-6 left-1/2 z-50 -translate-x-1/2 transition-all duration-300 sm:hidden ${
           progressVisible
             ? "translate-y-0 opacity-100"
-            : "translate-y-4 opacity-0"
+            : "pointer-events-none translate-y-4 opacity-0"
         }`}
       >
-        <div className="flex items-center gap-3 rounded-full border border-card-border bg-card-bg/90 px-4 py-2.5 shadow-lg shadow-black/40 backdrop-blur-md">
-          <div className="flex items-center gap-1.5">
+        <nav
+          aria-label={t("sectionTitle")}
+          className="flex items-center gap-1.5 rounded-full border border-card-border bg-card-bg/90 py-2 pl-2 pr-3 shadow-lg shadow-black/40 backdrop-blur-md"
+        >
+          {/* Previous arrow */}
+          <button
+            aria-label="Previous"
+            disabled={currentStep <= 1}
+            onClick={() => scrollToCard(currentStep - 2)}
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-muted transition-colors active:bg-accent/20 disabled:opacity-30"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          {/* Dots — tappable */}
+          <div className="flex items-center gap-0.5">
             {items.map((i) => (
-              <div
+              <button
                 key={i}
-                className={`rounded-full transition-all duration-300 ${
-                  i + 1 < currentStep
-                    ? "h-1.5 w-1.5 bg-accent"
-                    : i + 1 === currentStep
-                      ? "h-2 w-2 bg-accent shadow-[0_0_6px_var(--accent)]"
-                      : "h-1.5 w-1.5 bg-card-border"
-                }`}
-              />
+                onClick={() => scrollToCard(i)}
+                aria-label={`${i + 1} / ${items.length}`}
+                aria-current={i + 1 === currentStep ? "step" : undefined}
+                className="flex items-center justify-center p-1"
+              >
+                <span
+                  className={`block rounded-full transition-all duration-300 ${
+                    i + 1 < currentStep
+                      ? "h-1.5 w-1.5 bg-accent"
+                      : i + 1 === currentStep
+                        ? "h-2.5 w-2.5 bg-accent shadow-[0_0_6px_var(--accent)]"
+                        : "h-1.5 w-1.5 bg-card-border"
+                  }`}
+                />
+              </button>
             ))}
           </div>
-          <span className="text-xs font-medium tabular-nums text-muted">
+
+          {/* Counter */}
+          <span className="text-xs font-medium tabular-nums text-muted" aria-hidden="true">
             {currentStep}
             <span className="text-card-border">/</span>
             {items.length}
           </span>
-        </div>
+
+          {/* Next arrow */}
+          <button
+            aria-label="Next"
+            disabled={currentStep >= items.length}
+            onClick={() => scrollToCard(currentStep)}
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-muted transition-colors active:bg-accent/20 disabled:opacity-30"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </nav>
       </div>
 
       <div className="mx-auto max-w-5xl px-6">
