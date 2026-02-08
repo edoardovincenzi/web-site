@@ -39,28 +39,27 @@ export default function ExperienceSection() {
     const unsubscribe = scrollYProgress.on("change", (v) => {
       setProgressVisible(v > 0.01 && v < 0.99);
       setCurrentStep(
-        Math.min(items.length, Math.max(1, Math.ceil(v * items.length)))
+        Math.max(1, Math.min(items.length, Math.floor(v * items.length) + 1))
       );
     });
     return unsubscribe;
   }, [scrollYProgress, items.length]);
 
   const scrollToCard = useCallback((index: number) => {
-    if (!cardsRef.current) return;
-    const cards = cardsRef.current.querySelectorAll<HTMLElement>(":scope > .sticky");
-    const target = cards[index];
-    if (!target) return;
-    // scrollIntoView doesn't work reliably on sticky elements — it reads
-    // the visual (stuck) position instead of the layout position.
-    // Walk the offsetParent chain to get the true document-level offset.
-    let top = 0;
-    let el: HTMLElement | null = target;
-    while (el) {
-      top += el.offsetTop;
-      el = el.offsetParent as HTMLElement | null;
-    }
-    window.scrollTo({ top, behavior: "smooth" });
-  }, []);
+    if (!timelineRef.current) return;
+    const vh = window.innerHeight;
+    const rect = timelineRef.current.getBoundingClientRect();
+    const absTop = rect.top + window.scrollY;
+    // Reproduce the useScroll offsets: ["start 0.8", "end 0.7"]
+    const scrollStart = absTop - vh * 0.8;
+    const scrollEnd = absTop + rect.height - vh * 0.7;
+    // Place scroll slightly past the card boundary to avoid step ambiguity
+    const progress = (index + 0.1) / items.length;
+    window.scrollTo({
+      top: scrollStart + progress * (scrollEnd - scrollStart),
+      behavior: "smooth",
+    });
+  }, [items.length]);
 
   return (
     <section id="experience" aria-labelledby="experience-heading" className="pb-16 pt-32">
