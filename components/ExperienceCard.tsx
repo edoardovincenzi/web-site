@@ -10,6 +10,7 @@ interface ExperienceCardProps {
   role: string;
   company: string;
   description: string;
+  projects?: { name: string; detail: string }[];
   tags: string[];
 }
 
@@ -20,6 +21,7 @@ export default function ExperienceCard({
   role,
   company,
   description,
+  projects = [],
   tags,
 }: ExperienceCardProps) {
   const isLast = index === total - 1;
@@ -98,6 +100,15 @@ export default function ExperienceCard({
             {role}
           </h3>
           <p className="text-base leading-relaxed text-muted">{description}</p>
+          {projects.length > 0 && (
+            <ul className="mt-4 space-y-2">
+              {projects.map((project) => (
+                <li key={project.name} className="text-sm leading-relaxed text-muted">
+                  <span className="font-medium text-foreground">{project.name}</span> — {project.detail}
+                </li>
+              ))}
+            </ul>
+          )}
           {tags.length > 0 && (
             <div className="mt-5 flex flex-wrap gap-2">
               {tags.map((tag) => (
@@ -116,7 +127,7 @@ export default function ExperienceCard({
         <div className="grow bg-background" />
       </div>
 
-      <div className={isLast ? "h-[20vh]" : "h-[8vh]"} />
+      <div className={isLast ? "h-[max(20vh,320px)]" : "h-[8vh]"} />
     </>
   );
 }

@@ -99,10 +99,23 @@ export default function HeroSection() {
       />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="mb-5 inline-flex items-center gap-2 rounded-full border border-card-border bg-card-bg px-4 py-1.5 text-sm text-muted"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+          </span>
+          {t("availability")}
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.08 }}
           className="mb-4 text-lg text-muted"
         >
           {t("subtitle")}
@@ -144,6 +157,8 @@ export default function HeroSection() {
           {/* Secondary CTA – outline */}
           <a
             href="#contact"
+            data-lta-event="hero_contact_click"
+            data-lta-event-category="cta"
             className="group relative inline-flex items-center overflow-hidden rounded-full border border-accent/60 px-7 py-3.5 font-medium text-white transition-all duration-300 hover:border-accent/80 hover:bg-accent/10 hover:scale-[1.03]"
           >
             {t("ctaContact")}

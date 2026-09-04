@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Edoardo Vincenzi — Senior Front-end Developer",
-    "description": "Portfolio of Edoardo Vincenzi, freelance Senior Front-end Developer. React, Next.js, TypeScript. Over 8 years of experience."
+    "description": "Portfolio of Edoardo Vincenzi, freelance Senior Front-end Developer. React, Next.js, TypeScript, AI/Agentic Engineering. Over 9 years of experience."
   },
   "header": {
     "switchLang": "IT"
@@ -9,22 +9,33 @@
   "hero": {
     "subtitle": "I am a freelance",
     "title": "Senior<br></br> Front-end Engineer.",
-    "tagline": "I build scalable, high-quality web and mobile applications. Over 8 years of experience turning complex problems into clean, intuitive user interfaces.",
+    "tagline": "I build scalable, high-quality web and mobile applications. Over 9 years of experience turning complex problems into clean, intuitive user interfaces, from real-time architectures to production AI integrations.",
+    "availability": "Available for new projects",
     "cta": "Learn more",
     "ctaContact": "Contact me"
   },
   "about": {
     "sectionTitle": "About me.",
-    "p1": "I am a Frontend Engineer with 8 years of experience building scalable, high-quality web and mobile applications. I enjoy tackling complex problems and turning them into clean, intuitive user interfaces through thoughtful architecture and attention to detail.",
-    "p2": "Driven by curiosity and a strong product mindset, I continuously refine my skills and embrace new technologies. Throughout my career I've collaborated with companies of different sizes, from startups to enterprise organizations, handling everything front-end: from component architecture to state management, API integrations to design systems.",
-    "p3": "Great software is the result of solid engineering practices combined with a deep focus on user experience and long-term maintainability. Today I work as a freelancer, helping my clients turn their ideas into modern and functional interfaces."
+    "p1": "I am a Frontend Engineer with 9 years of experience building scalable, high-quality web and mobile applications. I enjoy tackling complex problems and turning them into clean, intuitive user interfaces through thoughtful architecture and attention to detail.",
+    "p2": "Driven by curiosity and a strong product mindset, I continuously refine my skills and embrace new technologies, from real-time architectures to AI-powered pipelines. Throughout my career I've collaborated with companies of different sizes, from startups to enterprise organizations, handling everything front-end: from component architecture to state management, API integrations to design systems.",
+    "p3": "Great software is the result of solid engineering practices combined with a deep focus on user experience and long-term maintainability. Today I work as a freelancer, helping my clients turn their ideas into modern, high-performing interfaces — powered by AI where it counts."
   },
   "skills": {
     "sectionTitle": "Skills.",
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right",
     "categories": {
       "frontend": {
         "title": "Frontend",
         "items": ["React", "Next.js", "Vue.js", "TypeScript", "JavaScript", "HTML", "CSS"]
+      },
+      "design": {
+        "title": "Design",
+        "items": ["Figma", "Penpot", "UI/UX Design", "Design Systems"]
+      },
+      "ai": {
+        "title": "AI & Agentic Engineering",
+        "items": ["Vercel AI SDK", "Tool Calling", "Structured Output Evals", "LLM-based OCR", "Prompt Engineering"]
       },
       "mobile": {
         "title": "Mobile",
@@ -44,7 +55,7 @@
       },
       "tools": {
         "title": "Tools & Architecture",
-        "items": ["Turborepo", "Module Federation", "Figma", "Git", "i18n", "NextAuth", "Sentry"]
+        "items": ["Turborepo", "Module Federation", "Git", "i18n", "NextAuth", "Sentry"]
       }
     }
   },
@@ -56,16 +67,26 @@
     "items": [
       {
         "period": "Sep 2024 — Present",
-        "role": "Front-end Engineer",
+        "role": "Senior Front-end Engineer & UX/UI Designer",
         "company": "Freelance",
-        "description": "Collaborating with multiple companies as a front-end consultant. Refactored large-scale React/Next.js codebases to improve scalability and introduced robust testing strategies. Built complex management platforms from scratch with advanced workflows, role-based permissions and map integrations. Led the development of back-office applications and a cross-platform mobile app for a startup. Created an accessible financial guidance platform following WCAG guidelines. Engineered a comprehensive CRM system focused on performance and seamless UX.",
-        "tags": ["React", "Next.js", "TypeScript", "React Native", "Redux", "Redux-Saga", "Tailwind CSS", "ShadcN UI", "Ant Design", "Turborepo", "React Query", "Playwright", "Vitest", "NextAuth", "Leaflet"]
+        "description": "Front-end consultant for companies of different sizes, focused on scalable architectures, real-time systems, and production AI integrations. Selected projects:",
+        "projects": [
+          { "name": "Battlepip", "detail": "Real-time trading app (PWA) with Server-Sent Events and an interactive dashboard built on TradingView Lightweight Charts." },
+          { "name": "Geeks Creation", "detail": "AI pipeline to extract structured data from images and populate a CRM, orchestrated with the Vercel AI SDK and an evaluation layer." },
+          { "name": "Red Software", "detail": "Complex management platform built from scratch with advanced workflows, role-based permissions, and map integrations." },
+          { "name": "Mom", "detail": "Accessible (WCAG) financial guidance portal for simulating and planning investments, from UX to user and subscription management." },
+          { "name": "MeApp", "detail": "Back-office applications and a cross-platform mobile app for a recycling startup, owned end to end." },
+          { "name": "Crm Dematech Impianti", "detail": "CRM for managing construction sites, project tracking, client relationships, and billing." },
+          { "name": "Toduba", "detail": "Refactored a Next.js/React codebase and introduced a unit and E2E testing strategy." }
+        ],
+        "tags": ["React", "Next.js", "TypeScript", "React Native", "Redux", "Redux-Saga", "Tailwind CSS", "ShadcN UI", "Ant Design", "Turborepo", "React Query", "Playwright", "Vitest", "NextAuth", "Leaflet", "Vercel AI SDK", "SSE", "NestJS"]
       },
       {
         "period": "Aug 2024 — Jun 2025",
-        "role": "Front-end Engineer",
+        "role": "Senior Front-end Engineer & UX/UI Designer",
         "company": "Primaton",
-        "description": "Implemented design guidelines and developed new applications from scratch. Designed the entire user experience using Figma. Utilized Micro Frontend architecture with Module Federation for modular, scalable solutions. Developed a comprehensive testing suite for E2E and unit testing.",
+        "description": "Developed new applications from scratch. Designed the entire user experience using Figma. Utilized Micro Frontend architecture with Module Federation for modular, scalable solutions. Developed a comprehensive testing suite for E2E and unit testing.",
+        "projects": [],
         "tags": ["React", "TypeScript", "Zustand", "Material UI", "Redux", "Tailwind CSS", "Figma", "Module Federation", "Cypress", "React Testing Library"]
       },
       {
@@ -73,20 +94,23 @@
         "role": "Front-end Engineer & UI/Designer",
         "company": "Alma Iura",
         "description": "Developed software from scratch using Vue.js and TypeScript. Designed the entire user flow and graphical interface using Figma and Penpot. Contributed to the testing strategy by implementing E2E test coverage and unit testing.",
+        "projects": [],
         "tags": ["Vue.js", "TypeScript", "Figma", "Penpot", "Cypress", "Vitest"]
       },
       {
         "period": "Oct 2021 — Oct 2023",
         "role": "Front-end Developer",
         "company": "Archiva Group",
-        "description": "Developed new applications for document management and digital signing. Established frontend guidelines for external and internal collaborators and designed a corporate theme for Material UI to speed up the creation of new applications.",
+        "description": "Developed new frontend applications. Established frontend guidelines for external and internal collaborators and designed a corporate theme for Material UI to speed up the creation of new applications.",
+        "projects": [],
         "tags": ["React", "TypeScript", "Redux", "Zustand", "Material UI", "Storybook", "Styled Components", "Tailwind CSS", "i18n"]
       },
       {
         "period": "Jan 2021 — Oct 2021",
         "role": "Software Developer",
         "company": "Enerj",
-        "description": "CRM development and database management for an energy management company.",
+        "description": "CRM development and database management (PostgreSQL).",
+        "projects": [],
         "tags": ["HTML", "CSS", "JavaScript", "jQuery", "C#", ".NET Framework", "PostgreSQL"]
       },
       {
@@ -94,13 +118,67 @@
         "role": "ICT Developer",
         "company": "Archiva Group",
         "description": "Developed and modified WPF applications. Utilized software tools for mapping source system data (XML, flat files, CSV, EDIFACT) to data warehouse tables.",
+        "projects": [],
         "tags": ["C#", "WPF", "Informatica", "Altova MapForce"]
+      }
+    ]
+  },
+  "education": {
+    "sectionTitle": "Education & Courses.",
+    "groupEducation": "Education",
+    "groupCourses": "Courses",
+    "formal": [
+      {
+        "period": "Oct 2022 — Dec 2022",
+        "role": "React Academy (74h)",
+        "company": "IT Talent Factory / Job SelectJob",
+        "description": "Intensive React specialization course for building modern frontend applications.",
+        "tags": ["React"]
+      },
+      {
+        "period": "May 2021 — Aug 2022",
+        "role": "Master's in Front-end Development (480h)",
+        "company": "Start2impact University",
+        "description": "Advanced training program in front-end development: HTML, CSS, JavaScript, modern frameworks, and best practices.",
+        "tags": []
       },
       {
         "period": "Oct 2014 — Dec 2020",
         "role": "Bachelor's Degree in Computer Science",
         "company": "University of Verona",
         "description": "Bachelor's degree in Computer Science. Achieved a GPA of 3.7 on the American GPA scale (on a scale of 4.0), equivalent to 92 points.",
+        "tags": []
+      }
+    ],
+    "courses": [
+      {
+        "role": "AI Coding for Real Engineers",
+        "company": "Matt Pocock / AI Hero",
+        "description": "Claude Code, agentic patterns, AI-assisted development.",
+        "tags": []
+      },
+      {
+        "role": "Build DeepSearch in TypeScript",
+        "company": "Matt Pocock / AI Hero",
+        "description": "Building a production-grade DeepSearch agent: AI SDK, multi-step reasoning.",
+        "tags": []
+      },
+      {
+        "role": "AI SDK Crash Course",
+        "company": "Matt Pocock / AI Hero",
+        "description": "Streaming, tool use, multi-step agents.",
+        "tags": []
+      },
+      {
+        "role": "Total TypeScript",
+        "company": "Matt Pocock",
+        "description": "Advanced type system, generics, application architecture.",
+        "tags": []
+      },
+      {
+        "role": "Spaghetti Prompt",
+        "company": "spaghettiprompt.it",
+        "description": "Italian-language prompt engineering course.",
         "tags": []
       }
     ]

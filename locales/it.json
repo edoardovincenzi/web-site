@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Edoardo Vincenzi — Senior Front-end Developer",
-    "description": "Portfolio di Edoardo Vincenzi, Senior Front-end Developer freelance. React, Next.js, TypeScript. Oltre 8 anni di esperienza."
+    "description": "Portfolio di Edoardo Vincenzi, Senior Front-end Developer freelance. React, Next.js, TypeScript, AI/Agentic Engineering. Oltre 9 anni di esperienza."
   },
   "header": {
     "switchLang": "EN"
@@ -9,22 +9,33 @@
   "hero": {
     "subtitle": "Sono un freelance",
     "title": "Senior<br></br> Front-end Engineer.",
-    "tagline": "Realizzo applicazioni web e mobile scalabili e di alta qualità. Oltre 8 anni di esperienza nel trasformare problemi complessi in interfacce pulite e intuitive.",
+    "tagline": "Realizzo applicazioni web e mobile scalabili e di alta qualità. Oltre 9 anni di esperienza nel trasformare problemi complessi in interfacce pulite e intuitive, dalle architetture real-time alle integrazioni AI in produzione.",
+    "availability": "Disponibile per nuovi progetti",
     "cta": "Scopri di più",
     "ctaContact": "Contattami"
   },
   "about": {
     "sectionTitle": "Chi sono.",
-    "p1": "Sono un Frontend Engineer con 8 anni di esperienza nella realizzazione di applicazioni web e mobile scalabili e di alta qualità. Mi piace affrontare problemi complessi e trasformarli in interfacce utente pulite e intuitive attraverso un'architettura curata e attenzione ai dettagli.",
-    "p2": "Guidato dalla curiosità e da un forte orientamento al prodotto, perfeziono continuamente le mie competenze e abbraccio nuove tecnologie. Nel corso della mia carriera ho collaborato con aziende di diverse dimensioni, dalle startup alle realtà enterprise, occupandomi di tutto ciò che riguarda il front-end: dall'architettura dei componenti alla gestione dello stato, dalle integrazioni API al design system.",
-    "p3": "Un grande software è il risultato di solide pratiche ingegneristiche unite a un profondo focus sull'esperienza utente e sulla manutenibilità a lungo termine. Oggi lavoro come freelance, aiutando i miei clienti a trasformare le loro idee in interfacce moderne e funzionali."
+    "p1": "Sono un Frontend Engineer con 9 anni di esperienza nella realizzazione di applicazioni web e mobile scalabili e di alta qualità. Mi piace affrontare problemi complessi e trasformarli in interfacce utente pulite e intuitive attraverso un'architettura curata e attenzione ai dettagli.",
+    "p2": "Guidato dalla curiosità e da un forte orientamento al prodotto, perfeziono continuamente le mie competenze e abbraccio nuove tecnologie, dalle architetture real-time alle pipeline basate su AI. Nel corso della mia carriera ho collaborato con aziende di diverse dimensioni, dalle startup alle realtà enterprise, occupandomi di tutto ciò che riguarda il front-end: dall'architettura dei componenti alla gestione dello stato, dalle integrazioni API al design system.",
+    "p3": "Un grande software è il risultato di solide pratiche ingegneristiche unite a un profondo focus sull'esperienza utente e sulla manutenibilità a lungo termine. Oggi lavoro come freelance, aiutando i miei clienti a trasformare le loro idee in interfacce moderne, performanti e, quando serve, potenziate dall'AI."
   },
   "skills": {
     "sectionTitle": "Competenze.",
+    "scrollLeft": "Scorri a sinistra",
+    "scrollRight": "Scorri a destra",
     "categories": {
       "frontend": {
         "title": "Frontend",
         "items": ["React", "Next.js", "Vue.js", "TypeScript", "JavaScript", "HTML", "CSS"]
+      },
+      "design": {
+        "title": "Design",
+        "items": ["Figma", "Penpot", "UI/UX Design", "Design Systems"]
+      },
+      "ai": {
+        "title": "AI & Agentic Engineering",
+        "items": ["Vercel AI SDK", "Tool Calling", "Structured Output Evals", "LLM-based OCR", "Prompt Engineering"]
       },
       "mobile": {
         "title": "Mobile",
@@ -44,7 +55,7 @@
       },
       "tools": {
         "title": "Strumenti & Architettura",
-        "items": ["Turborepo", "Module Federation", "Figma", "Git", "i18n", "NextAuth", "Sentry"]
+        "items": ["Turborepo", "Module Federation", "Git", "i18n", "NextAuth", "Sentry"]
       }
     }
   },
@@ -56,16 +67,26 @@
     "items": [
       {
         "period": "Set 2024 — Presente",
-        "role": "Front-end Engineer",
+        "role": "Senior Front-end Engineer & UX/UI Designer",
         "company": "Freelance",
-        "description": "Collaboro con diverse aziende come consulente front-end. Refactoring di codebase React/Next.js su larga scala per migliorare scalabilità, con introduzione di strategie di testing robuste. Sviluppo da zero di piattaforme gestionali complesse con workflow avanzati, permessi basati su ruoli e integrazioni con mappe. Sviluppo di applicazioni back-office e app mobile cross-platform per una startup. Realizzazione di una piattaforma di guida finanziaria accessibile secondo le linee guida WCAG. Progettazione di un sistema CRM completo focalizzato su performance e UX.",
-        "tags": ["React", "Next.js", "TypeScript", "React Native", "Redux", "Redux-Saga", "Tailwind CSS", "ShadcN UI", "Ant Design", "Turborepo", "React Query", "Playwright", "Vitest", "NextAuth", "Leaflet"]
+        "description": "Consulente front-end per aziende di diverse dimensioni, con focus su architetture scalabili, sistemi real-time e integrazioni AI in produzione. Progetti principali:",
+        "projects": [
+          { "name": "Battlepip", "detail": "App di trading in tempo reale (PWA) con Server-Sent Events e dashboard interattiva basata su TradingView Lightweight Charts." },
+          { "name": "Geeks Creation", "detail": "Pipeline AI per l'estrazione automatica di dati da immagini e popolamento CRM, orchestrata con Vercel AI SDK e un layer di evaluation." },
+          { "name": "Red Software", "detail": "Piattaforma gestionale complessa da zero con workflow avanzati, permessi basati su ruoli e integrazione mappe." },
+          { "name": "Mom", "detail": "Portale di guida finanziaria accessibile (WCAG) per simulazione e pianificazione di investimenti, dalla UX alla gestione utenti e abbonamenti." },
+          { "name": "MeApp", "detail": "Applicazioni back-office e app mobile cross-platform per una startup di riciclo, gestite end-to-end." },
+          { "name": "Crm Dematech Impianti", "detail": "CRM per la gestione di cantieri, tracking progetti, relazioni clienti e fatturazione." },
+          { "name": "Toduba", "detail": "Refactoring di una codebase Next.js/React con introduzione di una strategia di testing unit ed E2E." }
+        ],
+        "tags": ["React", "Next.js", "TypeScript", "React Native", "Redux", "Redux-Saga", "Tailwind CSS", "ShadcN UI", "Ant Design", "Turborepo", "React Query", "Playwright", "Vitest", "NextAuth", "Leaflet", "Vercel AI SDK", "SSE", "NestJS"]
       },
       {
         "period": "Ago 2024 — Giu 2025",
-        "role": "Front-end Engineer",
+        "role": "Senior Front-end Engineer & UX/UI Designer",
         "company": "Primaton",
-        "description": "Implementazione di linee guida di design e sviluppo di nuove applicazioni da zero. Progettazione dell'intera esperienza utente con Figma. Utilizzo di architettura Micro Frontend con Module Federation per soluzioni modulari e scalabili. Sviluppo di una suite di testing completa per E2E e unit testing.",
+        "description": "Sviluppo di nuove applicazioni da zero. Progettazione dell'intera esperienza utente con Figma. Utilizzo di architettura Micro Frontend con Module Federation per soluzioni modulari e scalabili. Sviluppo di una suite di testing completa per E2E e unit testing.",
+        "projects": [],
         "tags": ["React", "TypeScript", "Zustand", "Material UI", "Redux", "Tailwind CSS", "Figma", "Module Federation", "Cypress", "React Testing Library"]
       },
       {
@@ -73,20 +94,23 @@
         "role": "Front-end Engineer & UI/Designer",
         "company": "Alma Iura",
         "description": "Sviluppo software da zero con Vue.js e TypeScript. Progettazione dell'intero flusso utente e interfaccia grafica con Figma e Penpot. Implementazione di copertura test E2E e unit testing.",
+        "projects": [],
         "tags": ["Vue.js", "TypeScript", "Figma", "Penpot", "Cypress", "Vitest"]
       },
       {
         "period": "Ott 2021 — Ott 2023",
         "role": "Front-end Developer",
         "company": "Archiva Group",
-        "description": "Sviluppo di nuove applicazioni per la gestione documentale e firma digitale. Definizione di linee guida frontend per collaboratori esterni e interni e progettazione di un tema aziendale per Material UI per velocizzare la creazione di nuove applicazioni.",
+        "description": "Sviluppo di nuove applicazioni frontend. Definizione di linee guida frontend per collaboratori esterni e interni e progettazione di un tema aziendale per Material UI per velocizzare la creazione di nuove applicazioni.",
+        "projects": [],
         "tags": ["React", "TypeScript", "Redux", "Zustand", "Material UI", "Storybook", "Styled Components", "Tailwind CSS", "i18n"]
       },
       {
         "period": "Gen 2021 — Ott 2021",
         "role": "Software Developer",
         "company": "Enerj",
-        "description": "Sviluppo CRM e gestione database per un'azienda di gestione energetica.",
+        "description": "Sviluppo CRM e gestione database (PostgreSQL).",
+        "projects": [],
         "tags": ["HTML", "CSS", "JavaScript", "jQuery", "C#", ".NET Framework", "PostgreSQL"]
       },
       {
@@ -94,13 +118,67 @@
         "role": "ICT Developer",
         "company": "Archiva Group",
         "description": "Sviluppo e modifica di applicazioni WPF. Utilizzo di strumenti per il mapping di dati sorgente (XML, flat file, CSV, EDIFACT) verso tabelle di data warehouse.",
+        "projects": [],
         "tags": ["C#", "WPF", "Informatica", "Altova MapForce"]
+      }
+    ]
+  },
+  "education": {
+    "sectionTitle": "Formazione e corsi.",
+    "groupEducation": "Percorso formativo",
+    "groupCourses": "Corsi",
+    "formal": [
+      {
+        "period": "Ott 2022 — Dic 2022",
+        "role": "React Academy (74h)",
+        "company": "IT Talent Factory / Job SelectJob",
+        "description": "Corso intensivo di specializzazione in React per lo sviluppo di applicazioni frontend moderne.",
+        "tags": ["React"]
+      },
+      {
+        "period": "Mag 2021 — Ago 2022",
+        "role": "Master in Front-end Development (480h)",
+        "company": "Start2impact University",
+        "description": "Percorso di alta formazione in sviluppo front-end: HTML, CSS, JavaScript, framework moderni e best practice.",
+        "tags": []
       },
       {
         "period": "Ott 2014 — Dic 2020",
         "role": "Laurea in Informatica",
         "company": "Università degli Studi di Verona",
         "description": "Laurea triennale in Informatica. GPA di 3.7 sulla scala americana (su una scala di 4.0), equivalente a 92 punti.",
+        "tags": []
+      }
+    ],
+    "courses": [
+      {
+        "role": "AI Coding for Real Engineers",
+        "company": "Matt Pocock / AI Hero",
+        "description": "Claude Code, pattern agentici, sviluppo assistito dall'AI.",
+        "tags": []
+      },
+      {
+        "role": "Build DeepSearch in TypeScript",
+        "company": "Matt Pocock / AI Hero",
+        "description": "Costruzione di un agente DeepSearch production-grade: AI SDK, ragionamento multi-step.",
+        "tags": []
+      },
+      {
+        "role": "AI SDK Crash Course",
+        "company": "Matt Pocock / AI Hero",
+        "description": "Streaming, tool use, agenti multi-step.",
+        "tags": []
+      },
+      {
+        "role": "Total TypeScript",
+        "company": "Matt Pocock",
+        "description": "Sistema dei tipi avanzato, generics, architettura applicativa.",
+        "tags": []
+      },
+      {
+        "role": "Spaghetti Prompt",
+        "company": "spaghettiprompt.it",
+        "description": "Corso di prompt engineering in lingua italiana.",
         "tags": []
       }
     ]

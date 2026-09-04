@@ -18,12 +18,14 @@ export default function ExperienceSection() {
     if (!cardsRef.current) return;
     const stickyEls =
       cardsRef.current.querySelectorAll<HTMLElement>(":scope > .sticky");
-    let max = 0;
-    stickyEls.forEach((el) => {
-      max = Math.max(max, el.offsetHeight);
-    });
-    if (max > 0) {
-      cardsRef.current.style.setProperty("--card-stack-height", `${max}px`);
+    // Cap at the second-tallest card so one outlier (e.g. a job with many
+    // projects) doesn't force every short card to scroll just as far.
+    const heights = Array.from(stickyEls, (el) => el.offsetHeight).sort(
+      (a, b) => b - a
+    );
+    const cap = heights[1] ?? heights[0] ?? 0;
+    if (cap > 0) {
+      cardsRef.current.style.setProperty("--card-stack-height", `${cap}px`);
     }
   }, []);
 
@@ -33,7 +35,7 @@ export default function ExperienceSection() {
   });
   const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
-  const items = [0, 1, 2, 3, 4, 5, 6] as const;
+  const items = Array.from({ length: t.raw("items").length }, (_, i) => i);
 
   // Measure the absolute Y offset where each card starts in the document.
   // Spacer divs between cards are NOT sticky, so their positions are reliable.
@@ -100,7 +102,7 @@ export default function ExperienceSection() {
   }, []);
 
   return (
-    <section id="experience" aria-labelledby="experience-heading" className="pb-16 pt-32">
+    <section id="experience" aria-labelledby="experience-heading" className="isolate overflow-clip pb-16 pt-8">
       {/* Mobile floating progress indicator */}
       <div
         className={`fixed bottom-6 left-1/2 z-50 -translate-x-1/2 transition-all duration-300 sm:hidden ${
@@ -127,25 +129,31 @@ export default function ExperienceSection() {
 
           {/* Dots — tappable */}
           <div className="flex items-center gap-0.5">
-            {items.map((i) => (
-              <button
-                key={i}
-                onClick={() => scrollToCard(i)}
-                aria-label={`${i + 1} / ${items.length}`}
-                aria-current={i + 1 === currentStep ? "step" : undefined}
-                className="flex items-center justify-center p-1"
-              >
-                <span
-                  className={`block rounded-full transition-all duration-300 ${
-                    i + 1 < currentStep
-                      ? "h-1.5 w-1.5 bg-accent"
-                      : i + 1 === currentStep
-                        ? "h-2.5 w-2.5 bg-accent shadow-[0_0_6px_var(--accent)]"
-                        : "h-1.5 w-1.5 bg-card-border"
-                  }`}
-                />
-              </button>
-            ))}
+            {items.map((i) => {
+              const isCurrent = i + 1 === currentStep;
+              const isVisited = i + 1 < currentStep;
+
+              let dotClass = "h-1.5 w-1.5 bg-card-border";
+              if (isCurrent) {
+                dotClass = "h-2.5 w-2.5 bg-accent shadow-[0_0_6px_var(--accent)]";
+              } else if (isVisited) {
+                dotClass = "h-1.5 w-1.5 bg-accent";
+              }
+
+              return (
+                <button
+                  key={i}
+                  onClick={() => scrollToCard(i)}
+                  aria-label={`${i + 1} / ${items.length}`}
+                  aria-current={isCurrent ? "step" : undefined}
+                  className="flex items-center justify-center p-1"
+                >
+                  <span
+                    className={`block rounded-full transition-all duration-300 ${dotClass}`}
+                  />
+                </button>
+              );
+            })}
           </div>
 
           {/* Counter */}
@@ -230,6 +238,7 @@ export default function ExperienceSection() {
                 role={t(`items.${i}.role`)}
                 company={t(`items.${i}.company`)}
                 description={t(`items.${i}.description`)}
+                projects={t.raw(`items.${i}.projects`)}
                 tags={t.raw(`items.${i}.tags`)}
               />
             ))}

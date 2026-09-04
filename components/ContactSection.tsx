@@ -106,7 +106,12 @@ export default function ContactSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <a href="mailto:edoardo.vincenzi95@gmail.com" className="group relative inline-block">
+              <a
+                href="mailto:edoardo.vincenzi95@gmail.com"
+                data-lta-event="contact_email_click"
+                data-lta-event-category="contact"
+                className="group relative inline-block"
+              >
                 <span className="absolute -inset-1 rounded-full bg-accent/30 blur-xl transition-all duration-500 group-hover:bg-accent/50 group-hover:blur-2xl animate-[glow-pulse_3s_ease-in-out_infinite]" />
                 <span className="relative inline-flex items-center overflow-hidden rounded-full bg-accent px-8 py-3.5 font-medium text-white transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_0_40px_rgba(99,102,241,0.4)]">
                   <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />

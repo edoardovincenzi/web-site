@@ -1,14 +1,28 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion } from "motion/react";
-import { type ReactNode, useRef, useState, useCallback } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { type ReactNode, useCallback, useEffect, useRef, useState } from "react";
 
 const CATEGORY_ICONS: Record<string, ReactNode> = {
   frontend: (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <polyline points="16 18 22 12 16 6" />
       <polyline points="8 6 2 12 8 18" />
+    </svg>
+  ),
+  design: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 19l7-7 3 3-7 7-3-3z" />
+      <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+      <path d="M2 2l7.586 7.586" />
+      <circle cx="11" cy="11" r="2" />
+    </svg>
+  ),
+  ai: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" />
+      <circle cx="12" cy="12" r="3" />
     </svg>
   ),
   mobile: (
@@ -42,50 +56,24 @@ const CATEGORY_ICONS: Record<string, ReactNode> = {
   ),
 };
 
-const CATEGORY_KEYS = ["frontend", "mobile", "state", "ui", "testing", "tools"] as const;
+const CATEGORY_KEYS = ["frontend", "design", "ai", "mobile", "state", "ui", "testing", "tools"] as const;
 
-function SkillCard({
-  categoryKey,
-  index,
-  gridMousePos,
-  isGridHovered,
-}: {
-  categoryKey: (typeof CATEGORY_KEYS)[number];
-  index: number;
-  gridMousePos: { x: number; y: number };
-  isGridHovered: boolean;
-}) {
+function SkillCard({ categoryKey }: { categoryKey: (typeof CATEGORY_KEYS)[number] }) {
   const t = useTranslations("skills");
-  const cardRef = useRef<HTMLDivElement>(null);
   const skills: string[] = t.raw(`categories.${categoryKey}.items`);
 
-  // Calculate mouse position relative to this card
-  let relX = 0;
-  let relY = 0;
-  if (cardRef.current && isGridHovered) {
-    const rect = cardRef.current.getBoundingClientRect();
-    const gridRect = cardRef.current.parentElement?.getBoundingClientRect();
-    if (gridRect) {
-      relX = gridMousePos.x - (rect.left - gridRect.left);
-      relY = gridMousePos.y - (rect.top - gridRect.top);
-    }
-  }
-
   return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="group relative rounded-2xl border border-card-border bg-card-bg p-6"
+    <div
+      data-glow-card
+      className="relative h-full rounded-2xl border border-card-border bg-card-bg p-6"
     >
-      {/* Border glow overlay — follows the mouse */}
+      {/* Border glow overlay — follows the mouse via --glow-x / --glow-y, set on
+          mousemove by the row so every card lights up relative to the pointer. */}
       <div
-        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300"
+        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
-          opacity: isGridHovered ? 1 : 0,
-          background: `radial-gradient(300px circle at ${relX}px ${relY}px, rgba(99, 102, 241, 0.55), transparent 50%)`,
+          background:
+            "radial-gradient(300px circle at var(--glow-x, -1000px) var(--glow-y, -1000px), rgba(99, 102, 241, 0.55), transparent 50%)",
           mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
           maskComposite: "exclude",
           WebkitMaskComposite: "xor",
@@ -103,72 +91,132 @@ function SkillCard({
       </div>
 
       <div className="flex flex-wrap gap-2">
-        {skills.map((skill, j) => (
-          <motion.span
+        {skills.map((skill) => (
+          <span
             key={skill}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.3,
-              delay: index * 0.08 + j * 0.03,
-            }}
             className="rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-sm text-accent-light transition-colors hover:border-accent/40 hover:bg-accent/20"
           >
             {skill}
-          </motion.span>
+          </span>
         ))}
       </div>
-    </motion.div>
+    </div>
+  );
+}
+
+function ScrollButton({
+  direction,
+  label,
+  disabled,
+  onClick,
+}: {
+  direction: "left" | "right";
+  label: string;
+  disabled: boolean;
+  onClick: () => void;
+}) {
+  const arrow = direction === "left" ? "15 18 9 12 15 6" : "9 18 15 12 9 6";
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={label}
+      className="flex h-9 w-9 items-center justify-center rounded-full border border-card-border text-muted transition-colors hover:border-accent hover:text-foreground disabled:opacity-30 disabled:hover:border-card-border disabled:hover:text-muted"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points={arrow} />
+      </svg>
+    </button>
   );
 }
 
 export default function SkillsSection() {
   const t = useTranslations("skills");
-  const gridRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
-  const [isHovering, setIsHovering] = useState(false);
+  const reduceMotion = useReducedMotion();
+  const rowRef = useRef<HTMLUListElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
 
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!gridRef.current) return;
-      const rect = gridRef.current.getBoundingClientRect();
-      setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-    },
-    []
-  );
+  const updateEdges = useCallback(() => {
+    const el = rowRef.current;
+    if (!el) return;
+    setAtStart(el.scrollLeft <= 4);
+    setAtEnd(el.scrollLeft >= el.scrollWidth - el.clientWidth - 4);
+  }, []);
+
+  useEffect(() => {
+    updateEdges();
+    window.addEventListener("resize", updateEdges);
+    return () => window.removeEventListener("resize", updateEdges);
+  }, [updateEdges]);
+
+  function positionGlow(e: React.MouseEvent<HTMLUListElement>) {
+    const cards =
+      e.currentTarget.querySelectorAll<HTMLElement>("[data-glow-card]");
+    for (const card of cards) {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--glow-x", `${e.clientX - rect.left}px`);
+      card.style.setProperty("--glow-y", `${e.clientY - rect.top}px`);
+    }
+  }
+
+  function scrollByPage(direction: 1 | -1) {
+    const el = rowRef.current;
+    if (!el) return;
+    el.scrollBy({
+      left: direction * el.clientWidth * 0.8,
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
+  }
 
   return (
-    <section id="skills" aria-labelledby="skills-heading" className="py-32">
+    <section id="skills" aria-labelledby="skills-heading" className="py-8">
       <div className="mx-auto max-w-5xl px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          id="skills-heading"
-          className="mb-16 text-4xl font-bold tracking-tight"
+          transition={{ duration: reduceMotion ? 0 : 0.6 }}
+          className="mb-10 flex items-center justify-between gap-4"
         >
-          {t("sectionTitle")}
-        </motion.h2>
+          <h2 id="skills-heading" className="text-4xl font-bold tracking-tight">
+            {t("sectionTitle")}
+          </h2>
 
-        <div
-          ref={gridRef}
-          onMouseMove={handleMouseMove}
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
-          className="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {CATEGORY_KEYS.map((key, i) => (
-            <SkillCard
-              key={key}
-              categoryKey={key}
-              index={i}
-              gridMousePos={mousePos}
-              isGridHovered={isHovering}
+          {/* Prev/Next controls — keep scrolling discoverable for pointer users */}
+          <div className="flex items-center gap-2">
+            <ScrollButton
+              direction="left"
+              label={t("scrollLeft")}
+              disabled={atStart}
+              onClick={() => scrollByPage(-1)}
             />
+            <ScrollButton
+              direction="right"
+              label={t("scrollRight")}
+              disabled={atEnd}
+              onClick={() => scrollByPage(1)}
+            />
+          </div>
+        </motion.div>
+
+        <ul
+          ref={rowRef}
+          role="list"
+          aria-label={t("sectionTitle")}
+          tabIndex={0}
+          onMouseMove={positionGlow}
+          onScroll={updateEdges}
+          className="group flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        >
+          {CATEGORY_KEYS.map((key) => (
+            <li key={key} className="w-72 shrink-0 snap-start sm:w-80">
+              <SkillCard categoryKey={key} />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

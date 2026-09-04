@@ -40,7 +40,7 @@ export default function AboutSection() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="about" ref={sectionRef} aria-labelledby="about-heading" className="relative py-32">
+    <section id="about" ref={sectionRef} aria-labelledby="about-heading" className="relative pb-8 pt-32">
       <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
