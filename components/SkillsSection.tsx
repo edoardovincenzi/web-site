@@ -11,6 +11,13 @@ const CATEGORY_ICONS: Record<string, ReactNode> = {
       <polyline points="8 6 2 12 8 18" />
     </svg>
   ),
+  backend: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx="12" cy="5" rx="9" ry="3" />
+      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+      <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+    </svg>
+  ),
   design: (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 19l7-7 3 3-7 7-3-3z" />
@@ -56,7 +63,7 @@ const CATEGORY_ICONS: Record<string, ReactNode> = {
   ),
 };
 
-const CATEGORY_KEYS = ["frontend", "design", "ai", "mobile", "state", "ui", "testing", "tools"] as const;
+const CATEGORY_KEYS = ["frontend", "backend", "design", "ai", "mobile", "state", "ui", "testing", "tools"] as const;
 
 function SkillCard({ categoryKey }: { categoryKey: (typeof CATEGORY_KEYS)[number] }) {
   const t = useTranslations("skills");

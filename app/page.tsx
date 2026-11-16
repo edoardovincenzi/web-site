@@ -13,11 +13,11 @@ const jsonLd = {
   mainEntity: {
     '@type': 'Person',
     name: 'Edoardo Vincenzi',
-    jobTitle: 'Senior Front-end Developer',
+    jobTitle: 'Senior Software Engineer',
     url: 'https://www.edoardovincenzi.com',
     email: 'edoardo.vincenzi95@gmail.com',
     sameAs: ['https://github.com/edoardovincenzi', 'https://www.linkedin.com/in/edoardo-vincenzi'],
-    knowsAbout: ['React', 'Next.js', 'TypeScript', 'React Native', 'Tailwind CSS'],
+    knowsAbout: ['React', 'Next.js', 'TypeScript', 'Node.js', 'NestJS', 'PostgreSQL', 'React Native', 'Tailwind CSS'],
   },
 };
 

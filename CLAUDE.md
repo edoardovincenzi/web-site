@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Personal portfolio website for Edoardo Vincenzi (Senior Front-end Developer).
+Personal portfolio website for Edoardo Vincenzi (Senior Software Engineer — Frontend / Full Stack).
 Single-page application with anchor-based navigation, bilingual support (Italian/English), and heavy use of scroll-driven animations.
 
 **Live site:** https://www.edoardovincenzi.com

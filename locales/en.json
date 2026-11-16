@@ -1,24 +1,24 @@
 {
   "metadata": {
-    "title": "Edoardo Vincenzi — Senior Front-end Developer",
-    "description": "Portfolio of Edoardo Vincenzi, freelance Senior Front-end Developer. React, Next.js, TypeScript, AI/Agentic Engineering. Over 9 years of experience."
+    "title": "Edoardo Vincenzi — Senior Software Engineer (Frontend / Full Stack)",
+    "description": "Portfolio of Edoardo Vincenzi, Senior Software Engineer specialized in frontend with full stack experience. React, Next.js, TypeScript, Node.js, NestJS. Over 9 years of experience."
   },
   "header": {
     "switchLang": "IT"
   },
   "hero": {
-    "subtitle": "I am a freelance",
-    "title": "Senior<br></br> Front-end Engineer.",
-    "tagline": "I build scalable, high-quality web and mobile applications. Over 9 years of experience turning complex problems into clean, intuitive user interfaces, from real-time architectures to production AI integrations.",
-    "availability": "Available for new projects",
+    "subtitle": "Hi, I'm Edoardo",
+    "title": "Senior<br></br> Software Engineer.",
+    "tagline": "Frontend and full stack with React, Next.js, TypeScript and Node.js. Over 9 years of experience building web and enterprise applications, from requirements analysis to release, from real-time architectures to production AI integrations.",
+    "availability": "Open to new opportunities · Full-time, remote or hybrid",
     "cta": "Learn more",
     "ctaContact": "Contact me"
   },
   "about": {
     "sectionTitle": "About me.",
-    "p1": "I am a Frontend Engineer with 9 years of experience building scalable, high-quality web and mobile applications. I enjoy tackling complex problems and turning them into clean, intuitive user interfaces through thoughtful architecture and attention to detail.",
-    "p2": "Driven by curiosity and a strong product mindset, I continuously refine my skills and embrace new technologies, from real-time architectures to AI-powered pipelines. Throughout my career I've collaborated with companies of different sizes, from startups to enterprise organizations, handling everything front-end: from component architecture to state management, API integrations to design systems.",
-    "p3": "Great software is the result of solid engineering practices combined with a deep focus on user experience and long-term maintainability. Today I work as a freelancer, helping my clients turn their ideas into modern, high-performing interfaces — powered by AI where it counts."
+    "p1": "I am a Software Engineer with 9 years of experience delivering web and enterprise applications across the whole software lifecycle: from requirements analysis and solution design to development, testing and release. Frontend is my core strength, with React, Next.js and TypeScript, but I'm just as comfortable on the backend, integrating Node.js/NestJS services, REST APIs, PostgreSQL and C#/.NET legacy systems.",
+    "p2": "Driven by curiosity and a strong product mindset, I continuously refine my skills and embrace new technologies, from real-time architectures to AI-powered pipelines. Throughout my career I've collaborated with companies of different sizes, from startups to enterprise organizations, working on component architecture and state management as well as APIs, databases and design systems.",
+    "p3": "Great software is the result of solid engineering practices combined with a deep focus on user experience and long-term maintainability. I enjoy working closely with clients and cross-functional teams, modernizing existing applications and taking ownership of projects end to end. I'm now looking for a team where I can bring this experience and keep growing."
   },
   "skills": {
     "sectionTitle": "Skills.",
@@ -28,6 +28,10 @@
       "frontend": {
         "title": "Frontend",
         "items": ["React", "Next.js", "Vue.js", "TypeScript", "JavaScript", "HTML", "CSS"]
+      },
+      "backend": {
+        "title": "Backend & Database",
+        "items": ["Node.js", "NestJS", "REST APIs", "PostgreSQL", "SQL", "Prisma", "Data mapping / ETL", "C# / .NET (legacy)"]
       },
       "design": {
         "title": "Design",
@@ -55,7 +59,7 @@
       },
       "tools": {
         "title": "Tools & Architecture",
-        "items": ["Turborepo", "Module Federation", "Git", "i18n", "NextAuth", "Sentry"]
+        "items": ["Turborepo", "Module Federation", "Design Patterns", "Git", "i18n", "NextAuth", "Sentry"]
       }
     }
   },
@@ -66,42 +70,42 @@
     "pdfFallback": "Your browser does not support inline PDF viewing.",
     "items": [
       {
-        "period": "Sep 2024 — Present",
-        "role": "Senior Front-end Engineer & UX/UI Designer",
+        "period": "Sep 2024 — Nov 2026",
+        "role": "Senior Software Engineer & UX/UI Designer",
         "company": "Freelance",
-        "description": "Front-end consultant for companies of different sizes, focused on scalable architectures, real-time systems, and production AI integrations. Selected projects:",
+        "description": "Delivered web and enterprise applications for companies of different sizes, owning projects end to end: from requirements analysis and architecture to frontend and backend development and release. Selected projects:",
         "projects": [
-          { "name": "Battlepip", "detail": "Real-time trading app (PWA) with Server-Sent Events and an interactive dashboard built on TradingView Lightweight Charts." },
-          { "name": "Geeks Creation", "detail": "AI pipeline to extract structured data from images and populate a CRM, orchestrated with the Vercel AI SDK and an evaluation layer." },
-          { "name": "Red Software", "detail": "Complex management platform built from scratch with advanced workflows, role-based permissions, and map integrations." },
-          { "name": "Mom", "detail": "Accessible (WCAG) financial guidance portal for simulating and planning investments, from UX to user and subscription management." },
-          { "name": "MeApp", "detail": "Back-office applications and a cross-platform mobile app for a recycling startup, owned end to end." },
-          { "name": "Crm Dematech Impianti", "detail": "CRM for managing construction sites, project tracking, client relationships, and billing." },
-          { "name": "Toduba", "detail": "Refactored a Next.js/React codebase and introduced a unit and E2E testing strategy." }
+          { "name": "Battlepip", "detail": "Real-time trading app (PWA) with Server-Sent Events and TradingView charts. Integrated the frontend with an AWS EC2 backend and resolved production connectivity issues, within a two-person team." },
+          { "name": "Geeks Creation", "detail": "AI-assisted workflow to extract structured data from images and populate a CRM, with multi-step service integrations (Vercel AI SDK) and an evaluation layer to monitor extraction accuracy." },
+          { "name": "Toduba", "detail": "Refactored a Next.js/React platform for maintainability and scalability, improving data-handling patterns and introducing unit (Vitest, React Testing Library) and E2E (Playwright) tests." },
+          { "name": "Red Software", "detail": "Management platform built from scratch (Next.js, TypeScript) with complex workflows, roles and permissions. Integrated backend REST services and collaborated on NestJS APIs." },
+          { "name": "MeApp", "detail": "Led development of two internal back-office applications and a React Native mobile app for a recycling startup, from product flows and architecture to delivery." },
+          { "name": "Mom", "detail": "From client requirements to functional flows and UX in Figma, through to an accessible (WCAG) investment portal with user management, subscriptions and financial simulations (Next.js, TypeScript)." },
+          { "name": "Crm Dematech Impianti", "detail": "Led development of a CRM for construction sites, project tracking, client relationships and billing: frontend in React, TypeScript, React Query and ShadCN UI, backend in Node.js." }
         ],
-        "tags": ["React", "Next.js", "TypeScript", "React Native", "Redux", "Redux-Saga", "Tailwind CSS", "ShadcN UI", "Ant Design", "Turborepo", "React Query", "Playwright", "Vitest", "NextAuth", "Leaflet", "Vercel AI SDK", "SSE", "NestJS"]
+        "tags": ["React", "Next.js", "TypeScript", "Node.js", "NestJS", "React Native", "Redux", "Redux-Saga", "Tailwind CSS", "ShadcN UI", "Ant Design", "Turborepo", "React Query", "Playwright", "Vitest", "NextAuth", "Leaflet", "Vercel AI SDK", "SSE", "AWS", "Figma"]
       },
       {
         "period": "Aug 2024 — Jun 2025",
-        "role": "Senior Front-end Engineer & UX/UI Designer",
+        "role": "Senior Frontend Engineer & UX/UI Designer",
         "company": "Primaton",
-        "description": "Developed new applications from scratch. Designed the entire user experience using Figma. Utilized Micro Frontend architecture with Module Federation for modular, scalable solutions. Developed a comprehensive testing suite for E2E and unit testing.",
+        "description": "Developed enterprise web applications in React and TypeScript, translating business requirements into product features. Designed the UX in Figma, implemented a micro frontend architecture with Module Federation and built unit and E2E test suites.",
         "projects": [],
         "tags": ["React", "TypeScript", "Zustand", "Material UI", "Redux", "Tailwind CSS", "Figma", "Module Federation", "Cypress", "React Testing Library"]
       },
       {
         "period": "Jun 2024 — Jul 2024",
-        "role": "Front-end Engineer & UI/Designer",
-        "company": "Alma Iura",
-        "description": "Developed software from scratch using Vue.js and TypeScript. Designed the entire user flow and graphical interface using Figma and Penpot. Contributed to the testing strategy by implementing E2E test coverage and unit testing.",
+        "role": "Software Engineer & UI Designer",
+        "company": "Freelance, Alma Iura",
+        "description": "Developed legal management software from scratch using Vue.js and TypeScript, with a Node.js backend. Designed functional flows and interfaces with Figma and Penpot, and added unit and E2E test coverage.",
         "projects": [],
-        "tags": ["Vue.js", "TypeScript", "Figma", "Penpot", "Cypress", "Vitest"]
+        "tags": ["Vue.js", "TypeScript", "Node.js", "Figma", "Penpot", "Cypress", "Vitest"]
       },
       {
         "period": "Oct 2021 — Oct 2023",
-        "role": "Front-end Developer",
+        "role": "Frontend Developer",
         "company": "Archiva Group",
-        "description": "Developed new frontend applications. Established frontend guidelines for external and internal collaborators and designed a corporate theme for Material UI to speed up the creation of new applications.",
+        "description": "Developed and maintained enterprise applications using React, TypeScript and shared UI components. Established coding guidelines for internal and external collaborators and standardized a Material UI design system to accelerate delivery.",
         "projects": [],
         "tags": ["React", "TypeScript", "Redux", "Zustand", "Material UI", "Storybook", "Styled Components", "Tailwind CSS", "i18n"]
       },
@@ -109,7 +113,7 @@
         "period": "Jan 2021 — Oct 2021",
         "role": "Software Developer",
         "company": "Enerj",
-        "description": "CRM development and database management (PostgreSQL).",
+        "description": "Developed CRM features using JavaScript, jQuery and C#/.NET Framework 4.8, working with PostgreSQL databases.",
         "projects": [],
         "tags": ["HTML", "CSS", "JavaScript", "jQuery", "C#", ".NET Framework", "PostgreSQL"]
       },
@@ -117,9 +121,9 @@
         "period": "Jun 2017 — Mar 2019",
         "role": "ICT Developer",
         "company": "Archiva Group",
-        "description": "Developed and modified WPF applications. Utilized software tools for mapping source system data (XML, flat files, CSV, EDIFACT) to data warehouse tables.",
+        "description": "Developed C# WPF desktop applications and integrated legacy-source data (XML, CSV, flat files, EDIFACT) with data warehouse tables using ETL mapping tools.",
         "projects": [],
-        "tags": ["C#", "WPF", "Informatica", "Altova MapForce"]
+        "tags": ["C#", "WPF", "ETL", "Informatica", "Altova MapForce"]
       }
     ]
   },
@@ -184,8 +188,8 @@
     ]
   },
   "contact": {
-    "title": "Let's work together?",
-    "description": "Have a project in mind or looking for a front-end consultant? Drop me a line, I'd love to chat.",
+    "title": "Looking for someone to join your team?",
+    "description": "If you have an open role or just want to have a chat, drop me a line. I'll be happy to get back to you.",
     "cta": "Get in touch"
   },
   "footer": {

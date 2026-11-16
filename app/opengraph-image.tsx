@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Edoardo Vincenzi — Senior Front-end Developer";
+export const alt = "Edoardo Vincenzi — Senior Software Engineer (Frontend / Full Stack)";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -63,7 +63,7 @@ export default function OgImage() {
             color: "#a1a1aa",
           }}
         >
-          Senior Front-end Developer
+          Senior Software Engineer — Frontend / Full Stack
         </span>
         <div
           style={{
@@ -72,7 +72,7 @@ export default function OgImage() {
             marginTop: 32,
           }}
         >
-          {["React", "Next.js", "TypeScript"].map((tag) => (
+          {["React", "Next.js", "TypeScript", "Node.js"].map((tag) => (
             <span
               key={tag}
               style={{
