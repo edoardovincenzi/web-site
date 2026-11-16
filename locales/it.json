@@ -76,7 +76,7 @@
         "description": "Ho sviluppato applicazioni web ed enterprise per aziende di diverse dimensioni, seguendo i progetti end-to-end: dall'analisi dei requisiti all'architettura, fino allo sviluppo frontend e backend e al rilascio. Progetti principali:",
         "projects": [
           { "name": "Battlepip", "detail": "App di trading in tempo reale (PWA) con Server-Sent Events e grafici TradingView. Integrazione del frontend con un backend su AWS EC2 e risoluzione di problemi di connettività in produzione, in un team di due persone." },
-          { "name": "Geeks Creation", "detail": "Workflow basato su AI per estrarre dati strutturati da immagini e popolare un CRM, con integrazioni multi-step tra servizi (Vercel AI SDK) e un layer di evaluation per monitorare l'accuratezza dell'estrazione." },
+          { "name": "Geeks Creations", "detail": "Workflow basato su AI per estrarre dati strutturati da immagini e popolare un CRM, con integrazioni multi-step tra servizi (Vercel AI SDK) e un layer di evaluation per monitorare l'accuratezza dell'estrazione." },
           { "name": "Toduba", "detail": "Refactoring di una piattaforma Next.js/React per manutenibilità e scalabilità, migliorando la gestione dei dati e introducendo test unit (Vitest, React Testing Library) ed E2E (Playwright)." },
           { "name": "Red Software", "detail": "Piattaforma gestionale sviluppata da zero (Next.js, TypeScript) con workflow complessi, ruoli e permessi. Integrazione dei servizi REST e collaborazione sulle API NestJS." },
           { "name": "MeApp", "detail": "Guida dello sviluppo di due applicazioni gestionali interne e di un'app mobile React Native per una startup del riciclo, dai flussi di prodotto all'architettura fino al rilascio." },
